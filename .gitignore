@@ -36,7 +36,7 @@ yarn-error.log*
 # vercel
 .vercel
 /Yoga Site Files
-/public/videos/
+/public/videos/hero.mp4
 
 # typescript
 *.tsbuildinfo
