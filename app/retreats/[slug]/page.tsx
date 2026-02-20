@@ -9,8 +9,9 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function RetreatDetailPage({ params }: { params: { slug: string } }) {
-    const retreat = getRetreatBySlug(params.slug);
+export default async function RetreatDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const retreat = getRetreatBySlug(slug);
 
     if (!retreat) {
         notFound();

@@ -91,7 +91,7 @@ export default function RetreatDetailContent({ retreat }: { retreat: Retreat }) 
 
                             {/* Amenities */}
                             <div className="mt-8">
-                                <h3 className="text-lg font-bold text-dark-bg mb-3">What's Included</h3>
+                                <h3 className="text-lg font-bold text-dark-bg mb-3">What&apos;s Included</h3>
                                 <div className="flex flex-wrap gap-3">
                                     {retreat.amenities.map((item, i) => (
                                         <span key={i} className="px-3 py-1 bg-green-50 text-green-700 rounded-full text-sm border border-green-100">

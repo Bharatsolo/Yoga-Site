@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import MusicPlayer from '@/components/MusicPlayer';
 import Providers from '@/components/Providers';
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Inter({
     subsets: ['latin'],

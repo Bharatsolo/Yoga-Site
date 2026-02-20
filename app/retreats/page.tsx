@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { getRetreats, Retreat } from '@/lib/retreats';
 import SearchHero from '@/components/retreats/SearchHero';
-import FilterBox from '@/components/retreats/FilterBox';
+import FilterBox, { FilterChange } from '@/components/retreats/FilterBox';
 import RetreatListCard from '@/components/retreats/RetreatListCard';
 
 export default function RetreatsPage() {
-    const allRetreats = getRetreats();
+    const allRetreats = useMemo(() => getRetreats(), []);
     const [filteredRetreats, setFilteredRetreats] = useState<Retreat[]>(allRetreats);
 
     const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -36,9 +36,9 @@ export default function RetreatsPage() {
         }
 
         setFilteredRetreats(result);
-    }, [selectedCategories, selectedDurations, searchDate]); // removed allRetreats from dep array to avoid infinite loop if getRetreats returns new array
+    }, [allRetreats, selectedCategories, selectedDurations, searchDate]);
 
-    const handleFilterChange = (change: any) => {
+    const handleFilterChange = (change: FilterChange) => {
         // Clear all
         if (Object.keys(change).length === 0) {
             setSelectedCategories([]);
@@ -47,18 +47,20 @@ export default function RetreatsPage() {
         }
 
         if (change.category) {
+            const cat = change.category;
             setSelectedCategories(prev =>
                 change.checked
-                    ? [...prev, change.category]
-                    : prev.filter(c => c !== change.category)
+                    ? [...prev, cat]
+                    : prev.filter(c => c !== cat)
             );
         }
 
         if (change.duration) {
+            const dur = change.duration;
             setSelectedDurations(prev =>
                 change.checked
-                    ? [...prev, change.duration]
-                    : prev.filter(d => d !== change.duration)
+                    ? [...prev, dur]
+                    : prev.filter(d => d !== dur)
             );
         }
     };

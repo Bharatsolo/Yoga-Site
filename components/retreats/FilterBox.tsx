@@ -1,8 +1,14 @@
 'use client';
 
+export interface FilterChange {
+    category?: string;
+    duration?: string;
+    checked?: boolean;
+}
+
 interface FilterBoxProps {
     className?: string;
-    onFilterChange: (filters: any) => void;
+    onFilterChange: (filters: FilterChange) => void;
 }
 
 export default function FilterBox({ className, onFilterChange }: FilterBoxProps) {
