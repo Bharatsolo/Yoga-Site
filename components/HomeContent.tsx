@@ -60,7 +60,7 @@ export default function HomeContent() {
                 label={t('hero.label', lang)} title={t('hero.title', lang)}
                 subtitle={t('hero.subtitle', lang)}
                 bgImage="https://images.unsplash.com/photo-1545389336-cf090694435e?w=1920&q=80"
-                bgVideo="/videos/hero.mp4" showCTA
+                bgVideo="/videos/hero_compressed.mp4" showCTA
                 ctaText1={t('hero.cta1', lang)} ctaText2={t('hero.cta2', lang)}
             />
 
