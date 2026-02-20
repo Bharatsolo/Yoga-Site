@@ -1,0 +1,21 @@
+{
+    "name": "Sri Varahi Yoga Shala",
+    "short_name": "SVYS",
+    "description": "Ancient Indian Yoga — Expert-led classes for all levels in Bangalore",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#1a1a2e",
+    "theme_color": "#D4A574",
+    "icons": [
+        {
+            "src": "/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
