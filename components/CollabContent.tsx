@@ -1,14 +1,23 @@
 'use client';
 
+import { useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/translations';
 import TranslatedHero from '@/components/TranslatedHero';
 import SectionHeader from '@/components/SectionHeader';
 import CollabCard from '@/components/CollabCard';
 import CourseCard from '@/components/CourseCard';
+import CollabFormModal from '@/components/CollabFormModal';
 
 export default function CollabContent() {
     const { lang } = useLanguage();
+    const [isFormOpen, setIsFormOpen] = useState(false);
+    const [selectedCollab, setSelectedCollab] = useState('');
+
+    const openForm = (type: string) => {
+        setSelectedCollab(type);
+        setIsFormOpen(true);
+    };
 
     const benefits = [
         { icon: '📈', title: t('co.biz', lang), desc: t('co.bizD', lang) },
@@ -16,7 +25,7 @@ export default function CollabContent() {
         { icon: '🎓', title: t('co.train', lang), desc: t('co.trainD', lang) },
         { icon: '🌐', title: t('co.network', lang), desc: t('co.networkD', lang) },
         { icon: '🏷️', title: t('co.brand', lang), desc: t('co.brandD', lang) },
-        { icon: '🤲', title: t('co.mutual', lang), desc: t('co.mutualD', lang) },
+        { icon: '🌟', title: t('co.mutual', lang), desc: t('co.mutualD', lang) },
     ];
 
     return (
@@ -31,9 +40,9 @@ export default function CollabContent() {
                         <div className="space-y-4 text-text-muted leading-relaxed"><p>{t('co.visionP1', lang)}</p><p>{t('co.visionP2', lang)}</p></div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                        <CollabCard icon="🤝" title={t('co.partner', lang)} description={t('co.partnerD', lang)} ctaText={t('co.partnerCta', lang)} />
-                        <CollabCard icon="💰" title={t('co.investor', lang)} description={t('co.investorD', lang)} ctaText={t('co.investorCta', lang)} accent />
-                        <CollabCard icon="🏪" title={t('co.franchise', lang)} description={t('co.franchiseD', lang)} ctaText={t('co.franchiseCta', lang)} />
+                        <CollabCard icon="🤝" title={t('co.partner', lang)} description={t('co.partnerD', lang)} ctaText={t('co.partnerCta', lang)} onClick={() => openForm(t('co.partner', lang) || 'Partner')} />
+                        <CollabCard icon="💰" title={t('co.investor', lang)} description={t('co.investorD', lang)} ctaText={t('co.investorCta', lang)} onClick={() => openForm(t('co.investor', lang) || 'Investor')} accent />
+                        <CollabCard icon="🏪" title={t('co.franchise', lang)} description={t('co.franchiseD', lang)} ctaText={t('co.franchiseCta', lang)} onClick={() => openForm(t('co.franchise', lang) || 'Franchise')} />
                     </div>
                 </div>
             </section>
@@ -56,6 +65,12 @@ export default function CollabContent() {
                     <a href="/contact" className="inline-block px-10 py-4 bg-gradient-to-r from-gold to-gold-dark text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-gold/30 hover:scale-105 transition-all duration-300 text-lg">{t('co.contactUs', lang)}</a>
                 </div>
             </section>
+
+            <CollabFormModal
+                isOpen={isFormOpen}
+                onClose={() => setIsFormOpen(false)}
+                collabType={selectedCollab}
+            />
         </>
     );
 }

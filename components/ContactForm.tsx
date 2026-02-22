@@ -7,7 +7,8 @@ export default function ContactForm() {
 
     const handleSubmit = () => {
         const text = `Hello! I'm ${form.name}.%0AEmail: ${form.email}%0APhone: ${form.phone}%0AMessage: ${form.message}`;
-        window.open(`https://wa.me/919999999999?text=${text}`, '_blank');
+        window.open(`mailto:svayogashala@gmail.com,info@svayogashala.com?subject=New Contact Message&body=${text}`, '_blank');
+        window.open(`https://wa.me/917569645049?text=${text}`, '_blank');
     };
 
     return (

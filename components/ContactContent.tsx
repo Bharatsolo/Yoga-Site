@@ -1,13 +1,16 @@
 'use client';
 
+import { useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/translations';
 import TranslatedHero from '@/components/TranslatedHero';
 import SectionHeader from '@/components/SectionHeader';
 import ContactForm from '@/components/ContactForm';
+import RegistrationFormModal from '@/components/RegistrationFormModal';
 
 export default function ContactContent() {
     const { lang } = useLanguage();
+    const [isRegModalOpen, setIsRegModalOpen] = useState(false);
     return (
         <>
             <TranslatedHero labelKey="contact.label" titleKey="contact.title" subtitleKey="contact.subtitle" bgImage="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?w=1920&q=80" small />
@@ -32,7 +35,7 @@ export default function ContactContent() {
                                     <div><div className="text-sm font-semibold text-dark-bg mb-1">{t('ct.joinUs', lang)}</div><div className="text-text-muted text-sm leading-relaxed">{t('ct.joinDesc', lang)}</div></div>
                                 </div>
                             </div>
-                            <a href="https://forms.gle/nBk24VJ9uZHirybZ8" target="_blank" rel="noopener noreferrer" className="inline-block px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-gold/30 hover:scale-105 transition-all duration-300 mb-3">{t('ct.bookCta', lang)}</a>
+                            <button onClick={() => setIsRegModalOpen(true)} className="inline-block px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-gold/30 hover:scale-105 transition-all duration-300 mb-3">{t('ct.bookCta', lang)}</button>
                             <p className="text-text-muted text-sm">{t('ct.freeNote', lang)}</p>
                         </div>
                         <div className="animate-fade-in-right">
@@ -55,6 +58,7 @@ export default function ContactContent() {
                     </div>
                 </div>
             </section>
+            <RegistrationFormModal isOpen={isRegModalOpen} onClose={() => setIsRegModalOpen(false)} />
         </>
     );
 }

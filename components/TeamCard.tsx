@@ -1,9 +1,11 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 
 interface Trainer {
     icon: string;
+    image?: any;
     name: string;
     specialty: string;
     description: string;
@@ -51,7 +53,13 @@ export default function TeamCard({ trainers }: TeamCardProps) {
                         key={index}
                         className="w-[280px] sm:w-[300px] bg-white rounded-2xl border border-gray-100 shadow-sm card-hover p-6"
                     >
-                        <div className="text-5xl mb-4 text-center">{trainer.icon}</div>
+                        {trainer.image ? (
+                            <div className="relative w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-md">
+                                <Image src={trainer.image} alt={trainer.name} fill className="object-cover" />
+                            </div>
+                        ) : (
+                            <div className="text-5xl mb-4 text-center">{trainer.icon}</div>
+                        )}
                         <h3
                             className="text-lg font-bold text-dark-bg mb-1 text-center"
                             style={{ fontFamily: 'var(--font-heading)' }}

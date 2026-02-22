@@ -5,6 +5,7 @@ interface ScheduleBlockProps {
     times: string[];
     description: string;
     gradient?: string;
+    onClick?: () => void;
 }
 
 export default function ScheduleBlock({
@@ -14,6 +15,7 @@ export default function ScheduleBlock({
     times,
     description,
     gradient = 'from-gold-dark to-gold',
+    onClick,
 }: ScheduleBlockProps) {
     return (
         <div className="card-hover rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden">
@@ -37,14 +39,20 @@ export default function ScheduleBlock({
             </div>
             <div className="px-5 pb-5">
                 <p className="text-text-muted text-sm mb-4">{description}</p>
-                <a
-                    href="https://forms.gle/nBk24VJ9uZHirybZ8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full text-center px-6 py-3 bg-gradient-to-r from-gold to-gold-dark text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 text-sm"
-                >
-                    Join Now
-                </a>
+                {onClick ? (
+                    <button onClick={onClick} className="block w-full text-center px-6 py-3 bg-gradient-to-r from-gold to-gold-dark text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 text-sm">
+                        Join Now
+                    </button>
+                ) : (
+                    <a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full text-center px-6 py-3 bg-gradient-to-r from-gold to-gold-dark text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-gold/30 transition-all duration-300 text-sm"
+                    >
+                        Join Now
+                    </a>
+                )}
             </div>
         </div>
     );

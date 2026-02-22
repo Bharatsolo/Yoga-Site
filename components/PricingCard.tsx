@@ -4,6 +4,7 @@ interface PricingCardProps {
     price: string;
     ctaText?: string;
     ctaHref?: string;
+    onClick?: () => void;
     featured?: boolean;
     badge?: string;
     note?: string;
@@ -15,7 +16,8 @@ export default function PricingCard({
     duration,
     price,
     ctaText = 'Get Started',
-    ctaHref = 'https://forms.gle/nBk24VJ9uZHirybZ8',
+    ctaHref = '#',
+    onClick,
     featured = false,
     badge,
     note,
@@ -24,10 +26,10 @@ export default function PricingCard({
     return (
         <div
             className={`card-hover relative rounded-2xl p-6 sm:p-8 border text-center ${featured
-                    ? 'bg-gradient-to-br from-dark-bg to-dark-bg-alt border-gold/40 shadow-xl shadow-gold/10'
-                    : dark
-                        ? 'bg-white/5 border-white/10'
-                        : 'bg-white border-gray-100 shadow-sm'
+                ? 'bg-gradient-to-br from-dark-bg to-dark-bg-alt border-gold/40 shadow-xl shadow-gold/10'
+                : dark
+                    ? 'bg-white/5 border-white/10'
+                    : 'bg-white border-gray-100 shadow-sm'
                 }`}
         >
             {badge && (
@@ -54,19 +56,30 @@ export default function PricingCard({
                 </p>
             )}
             <div className="mt-6">
-                <a
-                    href={ctaHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-block w-full px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${featured
+                {onClick ? (
+                    <button onClick={onClick} className={`inline-block w-full px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${featured
+                        ? 'bg-gradient-to-r from-gold to-gold-dark text-dark-bg hover:shadow-lg hover:shadow-gold/30'
+                        : dark
+                            ? 'border-2 border-gold/40 text-gold hover:bg-gold/10'
+                            : 'bg-dark-bg text-white hover:bg-dark-bg-alt'
+                        }`}>
+                        {ctaText}
+                    </button>
+                ) : (
+                    <a
+                        href={ctaHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`inline-block w-full px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${featured
                             ? 'bg-gradient-to-r from-gold to-gold-dark text-dark-bg hover:shadow-lg hover:shadow-gold/30'
                             : dark
                                 ? 'border-2 border-gold/40 text-gold hover:bg-gold/10'
                                 : 'bg-dark-bg text-white hover:bg-dark-bg-alt'
-                        }`}
-                >
-                    {ctaText}
-                </a>
+                            }`}
+                    >
+                        {ctaText}
+                    </a>
+                )}
             </div>
         </div>
     );

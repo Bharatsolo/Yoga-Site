@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/translations';
 import TranslatedHero from '@/components/TranslatedHero';
@@ -7,9 +8,11 @@ import SectionHeader from '@/components/SectionHeader';
 import CourseCard from '@/components/CourseCard';
 import AgeCard from '@/components/AgeCard';
 import ScheduleBlock from '@/components/ScheduleBlock';
+import RegistrationFormModal from '@/components/RegistrationFormModal';
 
 export default function ExploreContent() {
     const { lang } = useLanguage();
+    const [isRegModalOpen, setIsRegModalOpen] = useState(false);
 
     const offerings = [
         { icon: '⚖️', title: t('ex.wm', lang), desc: t('ex.wmD', lang) },
@@ -19,7 +22,7 @@ export default function ExploreContent() {
         { icon: '🥗', title: t('ex.nutrition', lang), desc: t('ex.nutritionD', lang) },
         { icon: '🩺', title: t('ex.therapy', lang), desc: t('ex.therapyD', lang) },
         { icon: '🤰', title: t('ex.prenatal', lang), desc: t('ex.prenatalD', lang) },
-        { icon: '🌸', title: t('ex.women', lang), desc: t('ex.womenD', lang) },
+        { icon: '🧘‍♀️', title: t('ex.women', lang), desc: t('ex.womenD', lang) },
         { icon: '🧠', title: t('ex.stress', lang), desc: t('ex.stressD', lang) },
         { icon: '🌿', title: t('ex.detox', lang), desc: t('ex.detoxD', lang) },
         { icon: '💼', title: t('ex.corp', lang), desc: t('ex.corpD', lang) },
@@ -48,9 +51,9 @@ export default function ExploreContent() {
             <section className="py-20 md:py-28 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <ScheduleBlock icon="☀️" title={t('ex.morning', lang)} price={t('ex.morningPrice', lang)} times={['5:00 AM - 8:00 AM', '8:00 AM - 10:30 AM', '10:30 AM - 12:30 PM']} description={t('ex.morningD', lang)} gradient="from-amber-600 to-amber-400" />
-                        <ScheduleBlock icon="🌤️" title={t('ex.afternoon', lang)} price={t('ex.afternoonPrice', lang)} times={['3:00 PM - 4:00 PM', '4:00 PM - 5:00 PM']} description={t('ex.afternoonD', lang)} gradient="from-sky-700 to-sky-500" />
-                        <ScheduleBlock icon="🌙" title={t('ex.evening', lang)} price={t('ex.eveningPrice', lang)} times={['5:00 PM - 6:00 PM', '6:00 PM - 7:00 PM', '7:00 PM - 8:00 PM']} description={t('ex.eveningD', lang)} gradient="from-purple-800 to-purple-600" />
+                        <ScheduleBlock icon="☀️" title={t('ex.morning', lang)} price={t('ex.morningPrice', lang)} times={['5:00 AM - 8:00 AM', '8:00 AM - 10:30 AM', '10:30 AM - 12:30 PM']} description={t('ex.morningD', lang)} gradient="from-amber-600 to-amber-400" onClick={() => setIsRegModalOpen(true)} />
+                        <ScheduleBlock icon="🌤️" title={t('ex.afternoon', lang)} price={t('ex.afternoonPrice', lang)} times={['3:00 PM - 4:00 PM', '4:00 PM - 5:00 PM']} description={t('ex.afternoonD', lang)} gradient="from-sky-700 to-sky-500" onClick={() => setIsRegModalOpen(true)} />
+                        <ScheduleBlock icon="🌙" title={t('ex.evening', lang)} price={t('ex.eveningPrice', lang)} times={['5:00 PM - 6:00 PM', '6:00 PM - 7:00 PM', '7:00 PM - 8:00 PM']} description={t('ex.eveningD', lang)} gradient="from-purple-800 to-purple-600" onClick={() => setIsRegModalOpen(true)} />
                     </div>
                 </div>
             </section>
@@ -108,6 +111,7 @@ export default function ExploreContent() {
                     </div>
                 </div>
             </section>
+            <RegistrationFormModal isOpen={isRegModalOpen} onClose={() => setIsRegModalOpen(false)} />
         </>
     );
 }

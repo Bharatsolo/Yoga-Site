@@ -1,11 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/translations';
+import RegistrationFormModal from '@/components/RegistrationFormModal';
 
 export default function Footer() {
     const { lang } = useLanguage();
+    const [isRegModalOpen, setIsRegModalOpen] = useState(false);
     return (
         <footer className="bg-dark-bg text-white/80 pt-16 pb-8" role="contentinfo">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,7 +34,7 @@ export default function Footer() {
                         <div className="flex flex-col gap-2">
                             <Link href="/collaboration" className="text-white/50 hover:text-gold transition-colors text-sm">{t('nav.collaboration', lang)}</Link>
                             <Link href="/contact" className="text-white/50 hover:text-gold transition-colors text-sm">{t('nav.contact', lang)}</Link>
-                            <a href="https://forms.gle/nBk24VJ9uZHirybZ8" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-gold transition-colors text-sm">{t('footer.bookDemo', lang)}</a>
+                            <button onClick={() => setIsRegModalOpen(true)} className="text-left text-white/50 hover:text-gold transition-colors text-sm">{t('footer.bookDemo', lang)}</button>
                         </div>
                     </nav>
                     <div>
@@ -45,10 +48,11 @@ export default function Footer() {
                     <p className="text-white/40 text-sm">&copy; {new Date().getFullYear()} {t('footer.rights', lang)}</p>
                     <div className="flex gap-4">
                         <a href="https://chat.whatsapp.com/KvARoX4y5G62MquPDfHZi0" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-lg hover:bg-gold/20 hover:text-gold transition-all" aria-label="WhatsApp Community">💬</a>
-                        <a href="https://forms.gle/nBk24VJ9uZHirybZ8" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-lg hover:bg-gold/20 hover:text-gold transition-all" aria-label="Book a demo">📝</a>
+                        <button onClick={() => setIsRegModalOpen(true)} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-lg hover:bg-gold/20 hover:text-gold transition-all" aria-label="Book a demo">📝</button>
                     </div>
                 </div>
             </div>
+            <RegistrationFormModal isOpen={isRegModalOpen} onClose={() => setIsRegModalOpen(false)} />
         </footer>
     );
 }

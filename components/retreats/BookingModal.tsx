@@ -20,8 +20,28 @@ export default function BookingModal({ isOpen, onClose, retreatTitle }: BookingM
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Booking Enquiry:', { retreat: retreatTitle, ...formData });
-        alert('Thank you for your enquiry! We will contact you shortly.');
+
+        // Build WhatsApp message
+        let message = `🧘‍♀️ *New Booking Inquiry — Sva Yoga Shala*\n\n`;
+        message += `✨ *Interested In:* ${retreatTitle}\n`;
+        message += `👤 *Name:* ${formData.name}\n`;
+        message += `📧 *Email:* ${formData.email}\n`;
+        message += `📞 *Phone:* ${formData.phone}\n`;
+        message += `👥 *Guests:* ${formData.guests}\n`;
+
+        if (formData.date) {
+            message += `📅 *Preferred Date:* ${formData.date}\n`;
+        }
+        if (formData.message) {
+            message += `\n📝 *Additional Notes:* ${formData.message}\n`;
+        }
+
+        const encodedMessage = encodeURIComponent(message);
+
+        // Opening WhatsApp with the pre-filled message
+        // Replace 916302567165 with the actual number if different
+        window.open(`https://wa.me/916302567165?text=${encodedMessage}`, '_blank');
+
         onClose();
     };
 

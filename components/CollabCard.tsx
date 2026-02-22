@@ -4,6 +4,7 @@ interface CollabCardProps {
     description: string;
     ctaText: string;
     ctaHref?: string;
+    onClick?: () => void;
     accent?: boolean;
 }
 
@@ -12,7 +13,8 @@ export default function CollabCard({
     title,
     description,
     ctaText,
-    ctaHref = 'https://forms.gle/nBk24VJ9uZHirybZ8',
+    ctaHref,
+    onClick,
     accent = false,
 }: CollabCardProps) {
     return (
@@ -28,14 +30,23 @@ export default function CollabCard({
                 {title}
             </h3>
             <p className="text-white/50 text-sm leading-relaxed mb-6 flex-1">{description}</p>
-            <a
-                href={ctaHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 bg-gradient-to-r from-gold to-gold-dark text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-gold/30 hover:scale-105 transition-all duration-300 text-sm"
-            >
-                {ctaText}
-            </a>
+            {onClick ? (
+                <button
+                    onClick={onClick}
+                    className="px-6 py-3 bg-gradient-to-r from-gold to-gold-dark text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-gold/30 hover:scale-105 transition-all duration-300 text-sm"
+                >
+                    {ctaText}
+                </button>
+            ) : (
+                <a
+                    href={ctaHref || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 bg-gradient-to-r from-gold to-gold-dark text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-gold/30 hover:scale-105 transition-all duration-300 text-sm"
+                >
+                    {ctaText}
+                </a>
+            )}
         </div>
     );
 }

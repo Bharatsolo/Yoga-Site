@@ -1,24 +1,68 @@
 'use client';
+import { useState } from 'react';
 import Image from 'next/image';
 
 import { useLanguage } from '@/lib/LanguageContext';
 import { t } from '@/lib/translations';
+import RegistrationFormModal from '@/components/RegistrationFormModal';
 import HeroSection from '@/components/HeroSection';
 import SectionHeader from '@/components/SectionHeader';
 import CourseCard from '@/components/CourseCard';
 import TeamCard from '@/components/TeamCard';
+import AsanaScroller from '@/components/AsanaScroller';
+
+import anuragImg from '../Yoga Site Files/Masters/Anurag.jpg';
+import ramkiImg from '../Yoga Site Files/Masters/Ramki.jpg';
+import arpitaImg from '../Yoga Site Files/Masters/Arpita Kothari.jpg';
+import gauravImg from '../Yoga Site Files/Masters/Gaurav.jpg';
+import poojaImg from '../Yoga Site Files/Masters/Pooja.jpg';
+import sumanImg from '../Yoga Site Files/Masters/Suman.jpg';
+import supriyaImg from '../Yoga Site Files/Masters/Supriya.jpg';
+import swathiImg from '../Yoga Site Files/Masters/Swathi.jpg';
+
+import u1Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-02-25 at 10.24.08_185577c9.jpg';
+import u2Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-02-25 at 10.24.08_3eab83fd.jpg';
+import u3Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-02-25 at 10.24.08_661e3299.jpg';
+import u4Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-02-25 at 10.24.23_89e39411.jpg';
+import u5Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-02-25 at 10.24.24_14a6f742.jpg';
+import u6Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-02-25 at 10.24.24_2a81e23f.jpg';
+import u7Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-02-25 at 10.30.22_f8cf2685.jpg';
+import u8Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-02-25 at 10.30.23_3e28d366.jpg';
+import u9Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-02-25 at 10.30.23_666425bc.jpg';
+import u10Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-02-25 at 14.20.42_f6c7c2a6.jpg';
+import u11Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-02-25 at 14.20.43_0d74baaf.jpg';
+import u12Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-02-25 at 14.20.43_89f50baa.jpg';
+import u13Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-03-06 at 14.26.34_846b3a98.jpg';
+import u14Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-03-06 at 14.26.34_9e702873.jpg';
+import u15Img from '../Yoga Site Files/Masters/WhatsApp Image 2025-03-06 at 20.14.17_f0bdf6de.jpg';
 
 export default function HomeContent() {
     const { lang } = useLanguage();
+    const [isRegModalOpen, setIsRegModalOpen] = useState(false);
 
     const trainers = [
-        { icon: '🧘‍♂️', name: t('trainer.hatha', lang), specialty: t('trainer.hathaSpec', lang), description: t('trainer.hathaD', lang) },
-        { icon: '🎯', name: t('trainer.iyengar', lang), specialty: t('trainer.iyengarSpec', lang), description: t('trainer.iyengarD', lang) },
-        { icon: '🌿', name: t('trainer.therapy', lang), specialty: t('trainer.therapySpec', lang), description: t('trainer.therapyD', lang) },
-        { icon: '🔥', name: t('trainer.vinyasa', lang), specialty: t('trainer.vinyasaSpec', lang), description: t('trainer.vinyasaD', lang) },
-        { icon: '🌙', name: t('trainer.restorative', lang), specialty: t('trainer.restorativeSpec', lang), description: t('trainer.restorativeD', lang) },
-        { icon: '🧠', name: t('trainer.meditation', lang), specialty: t('trainer.meditationSpec', lang), description: t('trainer.meditationD', lang) },
+        { icon: '', image: anuragImg, name: 'Anurag', specialty: 'Senior Yoga Master', description: 'Dedicated yoga instructor with profound knowledge of traditional practices.' },
+        { icon: '', image: ramkiImg, name: 'Ramki', specialty: 'Senior Yoga Master', description: 'Experienced teacher focusing on alignment and deep physical mastery.' },
+        { icon: '', image: arpitaImg, name: 'Arpita Kothari', specialty: 'Yoga Instructor', description: 'Passionate about sharing the transformative power of yoga with students of all levels.' },
+        { icon: '', image: gauravImg, name: 'Gaurav', specialty: 'Yoga Instructor', description: 'Guiding students toward physical strength and mental clarity through mindful movement.' },
+        { icon: '', image: sumanImg, name: 'Suman', specialty: 'Yoga Instructor', description: 'Dedicated to helping students find balance, flexibility, and inner peace on the mat.' },
+        { icon: '', image: supriyaImg, name: 'Supriya', specialty: 'Yoga Instructor', description: 'Empowering students to connect with their breath and discover their inner strength.' },
+        { icon: '', image: swathiImg, name: 'Swathi', specialty: 'Yoga Instructor', description: 'Bringing a calm and focused energy to every class, supporting holistic well-being.' },
+        { icon: '', image: u15Img, name: 'Srirama Mandava', specialty: 'Yoga Instructor', description: 'Bringing a calm and focused energy to every class, supporting holistic well-being.' },
+        { icon: '', image: u1Img, name: 'Riyan', specialty: 'Yoga Instructor', description: 'Fostering a sense of peace and tranquility through mindful yoga practice.' },
+        { icon: '', image: u2Img, name: 'Anish', specialty: 'Yoga Instructor', description: 'Bringing a calm and focused energy to every class.' },
+        { icon: '', image: u3Img, name: 'Snehith', specialty: 'Yoga Instructor', description: 'Passionate about sharing the transformative power of yoga with students of all levels.' },
+        { icon: '', image: u4Img, name: 'Rohan', specialty: 'Yoga Instructor', description: 'Experienced teacher focusing on alignment and deep physical mastery.' },
+        { icon: '', image: u5Img, name: 'Vikram', specialty: 'Yoga Instructor', description: 'Guiding students toward physical strength and mental clarity through mindful movement.' },
+        { icon: '', image: u6Img, name: 'Rajesh', specialty: 'Yoga Instructor', description: 'Dedicated to helping students find balance, flexibility, and inner peace.' },
+        { icon: '', image: u7Img, name: 'Pooja', specialty: 'Yoga Instructor', description: 'Specializes in creating accessible, engaging classes that build community and wellness.' },
+        { icon: '', image: u10Img, name: 'Neha', specialty: 'Yoga Instructor', description: 'Passionate about sharing the transformative power of yoga with students of all levels.' },
+        { icon: '', image: u11Img, name: 'Kiran', specialty: 'Yoga Instructor', description: 'Guiding students toward physical strength and mental clarity through mindful movement.' },
+        { icon: '', image: u12Img, name: 'Sanjaya', specialty: 'Yoga Instructor', description: 'Specializes in creating accessible, engaging classes that build community and wellness.' },
+        { icon: '', image: u13Img, name: 'Divya', specialty: 'Yoga Instructor', description: 'Dedicated to helping students find balance, flexibility, and inner peace.' },
+
     ];
+
 
     const onlineCourses = [
         { icon: '🌱', title: t('course.beginner', lang), desc: t('course.beginnerD', lang) },
@@ -47,7 +91,7 @@ export default function HomeContent() {
         { icon: '🌙', label: 'Yin Yoga' },
         { icon: '💪', label: 'Power Yoga' },
         { icon: '💤', label: 'Yoga Nidra' },
-        { icon: '🌿', label: t('home.restorative', lang) },
+        { icon: '🌿', label: t('course.restorative', lang) },
         { icon: '🕉️', label: 'Kundalini Yoga' },
         { icon: '🌬️', label: 'Pranayama' },
         { icon: '🧠', label: 'Raja Yoga' },
@@ -100,7 +144,8 @@ export default function HomeContent() {
             <section className="py-20 md:py-28 bg-dark-bg">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeader label={t('home.typesLabel', lang)} title={t('home.typesTitle', lang)} description={t('home.typesDesc', lang)} light />
-                    <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+                    <AsanaScroller />
+                    <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-8">
                         {yogaTypes.map((type, i) => (
                             <div key={i} className="px-5 py-3 rounded-full bg-white/5 border border-white/10 text-white text-sm font-medium hover:bg-gold/15 hover:border-gold/30 hover:text-gold transition-all duration-300 cursor-default animate-scale-in" style={{ animationDelay: `${i * 0.05}s` }}>
                                 <span className="mr-2 text-lg">{type.icon}</span>{type.label}
@@ -125,9 +170,9 @@ export default function HomeContent() {
                     <span className="inline-block px-4 py-1.5 rounded-full bg-gold/10 border border-gold/20 text-gold text-xs font-semibold tracking-widest uppercase mb-4">{t('home.demoLabel', lang)}</span>
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'var(--font-heading)' }}>{t('home.demoTitle', lang)}</h2>
                     <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">{t('home.demoDesc', lang)}</p>
-                    <a href="https://forms.gle/nBk24VJ9uZHirybZ8" target="_blank" rel="noopener noreferrer" className="inline-block px-10 py-4 bg-gradient-to-r from-gold to-gold-dark text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-gold/30 hover:scale-105 transition-all duration-300 text-lg">
+                    <button onClick={() => setIsRegModalOpen(true)} className="inline-block px-10 py-4 bg-gradient-to-r from-gold to-gold-dark text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-gold/30 hover:scale-105 transition-all duration-300 text-lg">
                         {t('home.joinUs', lang)}
-                    </a>
+                    </button>
                 </div>
             </section>
 
@@ -190,6 +235,11 @@ export default function HomeContent() {
                     </div>
                 </div>
             </section>
+            <RegistrationFormModal isOpen={isRegModalOpen} onClose={() => setIsRegModalOpen(false)} />
         </>
     );
 }
+
+
+
+
