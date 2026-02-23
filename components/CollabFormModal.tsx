@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useLanguage } from '@/lib/LanguageContext';
-import { t } from '@/lib/translations';
 
 interface CollabFormModalProps {
     isOpen: boolean;
@@ -11,14 +9,13 @@ interface CollabFormModalProps {
 }
 
 export default function CollabFormModal({ isOpen, onClose, collabType }: CollabFormModalProps) {
-    const { lang } = useLanguage();
     const [formData, setFormData] = useState({
         firstName: '', lastName: '', email: '', phone: '', countryCode: '+91',
         country: '', address: '', city: '', zip: '',
         customSelect: '', message: ''
     });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSuccess, setIsSuccess] = useState(false);
+    const [isSubmitting] = useState(false);
+    const [isSuccess] = useState(false);
 
     // Prevent body scroll when modal is open
     useEffect(() => {
@@ -74,7 +71,7 @@ export default function CollabFormModal({ isOpen, onClose, collabType }: CollabF
         });
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
@@ -123,7 +120,7 @@ export default function CollabFormModal({ isOpen, onClose, collabType }: CollabF
                                 <div>
                                     <label htmlFor="phone" className="block text-sm font-medium text-dark-bg/80 mb-1">Phone *</label>
                                     <div className="relative flex items-center w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-full focus-within:ring-2 focus-within:ring-gold/50 focus-within:border-gold/50 transition-all">
-                                        <select name="countryCode" value={formData.countryCode} onChange={(e: any) => handleChange(e)} className="bg-transparent border-none outline-none text-gray-600 appearance-none text-sm pr-2 cursor-pointer w-[40px] focus:ring-0 truncate" style={{ scrollbarWidth: 'none' }}>
+                                        <select name="countryCode" value={formData.countryCode} onChange={handleChange} className="bg-transparent border-none outline-none text-gray-600 appearance-none text-sm pr-2 cursor-pointer w-[40px] focus:ring-0 truncate" style={{ scrollbarWidth: 'none' }}>
                                             <option value="+91">🇮🇳</option>
                                             <option value="+1">🇺🇸</option>
                                             <option value="+44">🇬🇧</option>
@@ -145,7 +142,7 @@ export default function CollabFormModal({ isOpen, onClose, collabType }: CollabF
 
                             <div>
                                 <label htmlFor="country" className="block text-sm font-medium text-dark-bg/80 mb-1">Country/Region</label>
-                                <select id="country" name="country" value={formData.country} onChange={(e: any) => handleChange(e)} className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm appearance-none">
+                                <select id="country" name="country" value={formData.country} onChange={handleChange} className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm appearance-none">
                                     <option value=""></option>
                                     <option value="India">India</option>
                                     <option value="USA">USA</option>
@@ -172,7 +169,7 @@ export default function CollabFormModal({ isOpen, onClose, collabType }: CollabF
                             {collabType === 'Partner' && (
                                 <div>
                                     <label htmlFor="customSelect" className="block text-sm font-medium text-dark-bg/80 mb-1">Field You Want Partner *</label>
-                                    <select required id="customSelect" name="customSelect" value={formData.customSelect} onChange={(e: any) => handleChange(e)} className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm appearance-none">
+                                    <select required id="customSelect" name="customSelect" value={formData.customSelect} onChange={handleChange} className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm appearance-none">
                                         <option value="">Choose one</option>
                                         <option value="Studio Partner">Studio Partner</option>
                                         <option value="Teacher">Teacher</option>
@@ -184,7 +181,7 @@ export default function CollabFormModal({ isOpen, onClose, collabType }: CollabF
                             {collabType === 'Investor' && (
                                 <div>
                                     <label htmlFor="customSelect" className="block text-sm font-medium text-dark-bg/80 mb-1">Investment Range</label>
-                                    <select id="customSelect" name="customSelect" value={formData.customSelect} onChange={(e: any) => handleChange(e)} className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm appearance-none">
+                                    <select id="customSelect" name="customSelect" value={formData.customSelect} onChange={handleChange} className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm appearance-none">
                                         <option value=""></option>
                                         <option value="2L-5L">2L-5L</option>
                                         <option value="5L-10L">5L- 10L</option>
@@ -196,7 +193,7 @@ export default function CollabFormModal({ isOpen, onClose, collabType }: CollabF
                             {collabType === 'Franchise' && (
                                 <div>
                                     <label htmlFor="customSelect" className="block text-sm font-medium text-dark-bg/80 mb-1">Range *</label>
-                                    <select required id="customSelect" name="customSelect" value={formData.customSelect} onChange={(e: any) => handleChange(e)} className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm appearance-none">
+                                    <select required id="customSelect" name="customSelect" value={formData.customSelect} onChange={handleChange} className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm appearance-none">
                                         <option value=""></option>
                                         <option value="0-2 Yrs">0-2 Yrs</option>
                                         <option value="2-5 Yrs">2 - 5 Yrs</option>

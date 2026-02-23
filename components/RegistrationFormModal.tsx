@@ -22,8 +22,8 @@ export default function RegistrationFormModal({ isOpen, onClose }: RegistrationF
         mode: '',
         sessionsPerMonth: '' // Added this based on user provided form content
     });
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSuccess, setIsSuccess] = useState(false);
+    const [isSubmitting] = useState(false);
+    const [isSuccess] = useState(false);
 
     // Prevent body scroll when modal is open
     useEffect(() => {
@@ -91,7 +91,7 @@ export default function RegistrationFormModal({ isOpen, onClose }: RegistrationF
                         Sri Varahi Yoga Shala Registration Form
                     </h3>
                     <p className="text-sm text-text-muted mt-2 max-w-lg mx-auto">
-                        Fill out the form below to stay connected, receive class updates, and discover inner peace through yoga. We're excited to support your journey!
+                        Fill out the form below to stay connected, receive class updates, and discover inner peace through yoga. We&apos;re excited to support your journey!
                     </p>
                 </div>
 

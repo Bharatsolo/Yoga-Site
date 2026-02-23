@@ -3,9 +3,11 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 
+import { StaticImageData } from 'next/image';
+
 interface Trainer {
     icon: string;
-    image?: any;
+    image?: string | StaticImageData;
     name: string;
     specialty: string;
     description: string;

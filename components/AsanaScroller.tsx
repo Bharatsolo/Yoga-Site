@@ -4,16 +4,16 @@ import Image from 'next/image';
 import { useRef } from 'react';
 
 // Static imports for Asanas
-import asana23 from '../Yoga Site Files/Asanas/asset 23.webp';
-import asana24 from '../Yoga Site Files/Asanas/asset 24.webp';
-import asana25 from '../Yoga Site Files/Asanas/asset 25.webp';
-import asana26 from '../Yoga Site Files/Asanas/asset 26.webp';
-import asana27 from '../Yoga Site Files/Asanas/asset 27.webp';
-import asana28 from '../Yoga Site Files/Asanas/asset 28.webp';
-import asana29 from '../Yoga Site Files/Asanas/asset 29.webp';
-import asana30 from '../Yoga Site Files/Asanas/asset 30.webp';
-import asana31 from '../Yoga Site Files/Asanas/asset 31.webp';
-import asana32 from '../Yoga Site Files/Asanas/asset 32.webp';
+import asana23 from '../public/images/asanas/asset 23.webp';
+import asana24 from '../public/images/asanas/asset 24.webp';
+import asana25 from '../public/images/asanas/asset 25.webp';
+import asana26 from '../public/images/asanas/asset 26.webp';
+import asana27 from '../public/images/asanas/asset 27.webp';
+import asana28 from '../public/images/asanas/asset 28.webp';
+import asana29 from '../public/images/asanas/asset 29.webp';
+import asana30 from '../public/images/asanas/asset 30.webp';
+import asana31 from '../public/images/asanas/asset 31.webp';
+import asana32 from '../public/images/asanas/asset 32.webp';
 
 const asanas = [
     asana23, asana24, asana25, asana26, asana27,

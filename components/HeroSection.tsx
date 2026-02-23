@@ -29,7 +29,6 @@ export default function HeroSection({
                 <video
                     autoPlay muted loop playsInline
                     className="absolute inset-0 w-full h-full object-cover scale-105"
-                    poster={bgImage}
                 >
                     <source src={bgVideo} type="video/mp4" />
                 </video>
