@@ -19,16 +19,8 @@ import sumanImg from '../public/images/masters/Suman.jpg';
 import supriyaImg from '../public/images/masters/Supriya.jpg';
 import swathiImg from '../public/images/masters/Swathi.jpg';
 
-import u1Img from '../public/images/masters/WhatsApp Image 2025-02-25 at 10.24.08_185577c9.jpg';
-import u2Img from '../public/images/masters/WhatsApp Image 2025-02-25 at 10.24.08_3eab83fd.jpg';
-import u3Img from '../public/images/masters/WhatsApp Image 2025-02-25 at 10.24.08_661e3299.jpg';
-import u4Img from '../public/images/masters/WhatsApp Image 2025-02-25 at 10.24.23_89e39411.jpg';
-import u5Img from '../public/images/masters/WhatsApp Image 2025-02-25 at 10.24.24_14a6f742.jpg';
 import u6Img from '../public/images/masters/WhatsApp Image 2025-02-25 at 10.24.24_2a81e23f.jpg';
 import u7Img from '../public/images/masters/WhatsApp Image 2025-02-25 at 10.30.22_f8cf2685.jpg';
-import u10Img from '../public/images/masters/WhatsApp Image 2025-02-25 at 14.20.42_f6c7c2a6.jpg';
-import u11Img from '../public/images/masters/WhatsApp Image 2025-02-25 at 14.20.43_0d74baaf.jpg';
-import u12Img from '../public/images/masters/WhatsApp Image 2025-02-25 at 14.20.43_89f50baa.jpg';
 import u13Img from '../public/images/masters/WhatsApp Image 2025-03-06 at 14.26.34_846b3a98.jpg';
 import u15Img from '../public/images/masters/WhatsApp Image 2025-03-06 at 20.14.17_f0bdf6de.jpg';
 
@@ -45,16 +37,8 @@ export default function HomeContent() {
         { icon: '', image: supriyaImg, name: 'Supriya', specialty: 'Yoga Instructor', description: 'Empowering students to connect with their breath and discover their inner strength.' },
         { icon: '', image: swathiImg, name: 'Swathi', specialty: 'Yoga Instructor', description: 'Bringing a calm and focused energy to every class, supporting holistic well-being.' },
         { icon: '', image: u15Img, name: 'Srirama Mandava', specialty: 'Yoga Instructor', description: 'Bringing a calm and focused energy to every class, supporting holistic well-being.' },
-        { icon: '', image: u1Img, name: 'Riyan', specialty: 'Yoga Instructor', description: 'Fostering a sense of peace and tranquility through mindful yoga practice.' },
-        { icon: '', image: u2Img, name: 'Anish', specialty: 'Yoga Instructor', description: 'Bringing a calm and focused energy to every class.' },
-        { icon: '', image: u3Img, name: 'Snehith', specialty: 'Yoga Instructor', description: 'Passionate about sharing the transformative power of yoga with students of all levels.' },
-        { icon: '', image: u4Img, name: 'Rohan', specialty: 'Yoga Instructor', description: 'Experienced teacher focusing on alignment and deep physical mastery.' },
-        { icon: '', image: u5Img, name: 'Vikram', specialty: 'Yoga Instructor', description: 'Guiding students toward physical strength and mental clarity through mindful movement.' },
         { icon: '', image: u6Img, name: 'Rajesh', specialty: 'Yoga Instructor', description: 'Dedicated to helping students find balance, flexibility, and inner peace.' },
         { icon: '', image: u7Img, name: 'Pooja', specialty: 'Yoga Instructor', description: 'Specializes in creating accessible, engaging classes that build community and wellness.' },
-        { icon: '', image: u10Img, name: 'Neha', specialty: 'Yoga Instructor', description: 'Passionate about sharing the transformative power of yoga with students of all levels.' },
-        { icon: '', image: u11Img, name: 'Kiran', specialty: 'Yoga Instructor', description: 'Guiding students toward physical strength and mental clarity through mindful movement.' },
-        { icon: '', image: u12Img, name: 'Sanjaya', specialty: 'Yoga Instructor', description: 'Specializes in creating accessible, engaging classes that build community and wellness.' },
         { icon: '', image: u13Img, name: 'Divya', specialty: 'Yoga Instructor', description: 'Dedicated to helping students find balance, flexibility, and inner peace.' },
 
     ];

@@ -49,10 +49,10 @@ export default function Navbar() {
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3 group" aria-label="Sri Varahi Yoga Shala — Home">
                         <Image
-                            src="/images/logo.png"
+                            src="/images/Yoga Site Logo.jpg"
                             alt="Sri Varahi Yoga Shala Logo"
-                            width={48}
-                            height={48}
+                            width={75}
+                            height={75}
                             className="rounded-full object-cover border-2 border-gold/30 group-hover:border-gold transition-colors"
                         />
                         <div className="flex flex-col leading-tight">
