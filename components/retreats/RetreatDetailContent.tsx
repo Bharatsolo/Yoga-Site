@@ -203,8 +203,8 @@ export default function RetreatDetailContent({ retreat }: { retreat: Retreat }) 
 
                             <div className="mt-6 text-center">
                                 <p className="text-xs text-text-muted mb-2">Need help?</p>
-                                <a href="tel:+917569645049" className="text-dark-bg font-bold flex items-center justify-center gap-2">
-                                    <span>📞</span> +91 75696 45049
+                                <a href="tel:+918639978917" className="text-dark-bg font-bold flex items-center justify-center gap-2">
+                                    <span>📞</span> +91 86399 78917
                                 </a>
                             </div>
                         </div>

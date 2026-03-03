@@ -3,7 +3,7 @@
 export default function WhatsAppButton() {
     return (
         <a
-            href="https://wa.me/917569645049?text=Hello!%20I%20am%20interested%20in%20yoga%20classes."
+            href="https://wa.me/918639978917?text=Hello!%20I%20am%20interested%20in%20yoga%20classes."
             target="_blank"
             rel="noopener noreferrer"
             className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/30 animate-pulse-glow hover:scale-110 transition-transform duration-300"

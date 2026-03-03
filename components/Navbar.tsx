@@ -15,6 +15,7 @@ const navKeys = [
     { href: '/plans', key: 'nav.plans' },
     { href: '/retreats', key: 'nav.retreats' },
     { href: '/collaboration', key: 'nav.collaboration' },
+    { href: '/join-as-trainer', key: 'nav.joinTrainer' },
     { href: '/contact', key: 'nav.contact' },
 ];
 
@@ -66,17 +67,32 @@ export default function Navbar() {
 
                     {/* Desktop Nav */}
                     <div className="hidden lg:flex items-center gap-1" role="menubar">
-                        {navKeys.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                role="menuitem"
-                                aria-current={pathname === link.href ? 'page' : undefined}
-                                className={`px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 ${pathname === link.href ? 'bg-gold/20 text-gold' : 'text-white/80 hover:text-gold hover:bg-white/5'}`}
-                            >
-                                {t(link.key, lang)}
-                            </Link>
-                        ))}
+                        {navKeys.map((link) => {
+                            if (link.href === '/join-as-trainer') {
+                                return (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        role="menuitem"
+                                        aria-current={pathname === link.href ? 'page' : undefined}
+                                        className={`px-3 py-2 rounded-full text-sm font-bold transition-all duration-300 ${pathname === link.href ? 'bg-gold/20 text-gold' : 'text-gold hover:bg-white/5'}`}
+                                    >
+                                        {t(link.key, lang)}
+                                    </Link>
+                                );
+                            }
+                            return (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    role="menuitem"
+                                    aria-current={pathname === link.href ? 'page' : undefined}
+                                    className={`px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 ${pathname === link.href ? 'bg-gold/20 text-gold' : 'text-white/80 hover:text-gold hover:bg-white/5'}`}
+                                >
+                                    {t(link.key, lang)}
+                                </Link>
+                            );
+                        })}
                     </div>
 
                     {/* Language + Mobile Toggle */}
@@ -100,17 +116,32 @@ export default function Navbar() {
                         role="dialog"
                         aria-modal="true"
                     >
-                        {navKeys.map((link) => (
-                            <Link
-                                key={link.href}
-                                href={link.href}
-                                onClick={() => setIsOpen(false)}
-                                aria-current={pathname === link.href ? 'page' : undefined}
-                                className={`text-2xl font-medium transition-colors ${pathname === link.href ? 'text-gold' : 'text-white/80 hover:text-gold'}`}
-                            >
-                                {t(link.key, lang)}
-                            </Link>
-                        ))}
+                        {navKeys.map((link) => {
+                            if (link.href === '/join-as-trainer') {
+                                return (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        onClick={() => setIsOpen(false)}
+                                        aria-current={pathname === link.href ? 'page' : undefined}
+                                        className={`text-2xl font-bold transition-colors ${pathname === link.href ? 'text-gold' : 'text-gold hover:text-gold-light'}`}
+                                    >
+                                        {t(link.key, lang)}
+                                    </Link>
+                                );
+                            }
+                            return (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    onClick={() => setIsOpen(false)}
+                                    aria-current={pathname === link.href ? 'page' : undefined}
+                                    className={`text-2xl font-medium transition-colors ${pathname === link.href ? 'text-gold' : 'text-white/80 hover:text-gold'}`}
+                                >
+                                    {t(link.key, lang)}
+                                </Link>
+                            );
+                        })}
                     </div>
                 </div>
             </nav>

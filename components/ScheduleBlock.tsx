@@ -23,9 +23,7 @@ export default function ScheduleBlock({
                 <h3 className="text-lg font-bold text-white" style={{ fontFamily: 'var(--font-heading)' }}>
                     {icon} {title}
                 </h3>
-                <span className="px-3 py-1 bg-white/20 rounded-full text-white text-sm font-semibold">
-                    {price}
-                </span>
+
             </div>
             <div className="p-5 space-y-3">
                 {times.map((time, i) => (

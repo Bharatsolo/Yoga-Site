@@ -15,12 +15,14 @@ export default function RegistrationFormModal({ isOpen, onClose }: RegistrationF
         phone: '',
         countryCode: '+91',
         email: '',
+        city: '',
+        address: '',
         purpose: '',
         source: '',
         joinTimeframe: '',
         preferredTimeSlot: '',
         mode: '',
-        sessionsPerMonth: '' // Added this based on user provided form content
+        sessionsPerMonth: ''
     });
     const [isSubmitting] = useState(false);
     const [isSuccess] = useState(false);
@@ -43,30 +45,32 @@ export default function RegistrationFormModal({ isOpen, onClose }: RegistrationF
         e.preventDefault();
 
         // Build WhatsApp message
-        let message = `🕉️ *New Registration — Sri Varahi Yoga Shala*\n\n`;
-        message += `👤 *Name:* ${formData.fullName}\n`;
-        if (formData.age) message += `🎂 *Age:* ${formData.age}\n`;
-        message += `🚻 *Gender:* ${formData.gender}\n`;
-        message += `📞 *Phone:* ${formData.countryCode} ${formData.phone}\n`;
-        if (formData.email) message += `📧 *Email:* ${formData.email}\n`;
+        let message = `*New Registration — Sri Varahi Yoga Shala*\n\n`;
+        message += `• *Name:* ${formData.fullName}\n`;
+        if (formData.age) message += `• *Age:* ${formData.age}\n`;
+        message += `• *Gender:* ${formData.gender}\n`;
+        message += `• *Phone:* ${formData.countryCode} ${formData.phone}\n`;
+        if (formData.email) message += `• *Email:* ${formData.email}\n`;
+        if (formData.city) message += `• *City:* ${formData.city}\n`;
+        if (formData.address) message += `• *Address:* ${formData.address}\n`;
 
         message += `\n*--- Enrollment Details ---*\n`;
-        message += `📅 *Sessions per month:* ${formData.sessionsPerMonth}\n`;
-        message += `🎯 *Purpose of Joining:* ${formData.purpose}\n`;
-        message += `💻 *Mode:* ${formData.mode}\n`;
-        message += `⏱️ *Preferred Time Slot:* ${formData.preferredTimeSlot}\n`;
-        message += `⏳ *How early can you join:* ${formData.joinTimeframe}\n`;
-        message += `🗣️ *Source:* ${formData.source}\n`;
+        message += `• *Sessions per month:* ${formData.sessionsPerMonth}\n`;
+        message += `• *Purpose of Joining:* ${formData.purpose}\n`;
+        message += `• *Mode:* ${formData.mode}\n`;
+        message += `• *Preferred Time Slot:* ${formData.preferredTimeSlot}\n`;
+        message += `• *How early can you join:* ${formData.joinTimeframe}\n`;
+        message += `• *Source:* ${formData.source}\n`;
 
         const encodedMessage = encodeURIComponent(message);
 
         // Opening WhatsApp with the pre-filled message
-        window.open(`mailto:svayogashala@gmail.com,info@svayogashala.com?subject=New Registration&body=${encodedMessage}`, '_blank');
-        window.open(`https://wa.me/917569645049?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/918639978917?text=${encodedMessage}`, '_blank');
 
         onClose();
         setFormData({
             fullName: '', age: '', gender: '', phone: '', countryCode: '+91', email: '',
+            city: '', address: '',
             purpose: '', source: '', joinTimeframe: '', preferredTimeSlot: '', mode: '', sessionsPerMonth: ''
         });
     };
@@ -148,6 +152,17 @@ export default function RegistrationFormModal({ isOpen, onClose }: RegistrationF
                                 </div>
                             </div>
 
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label htmlFor="city" className="block text-sm font-medium text-dark-bg/80 mb-1">City *</label>
+                                    <input required type="text" id="city" name="city" value={formData.city} onChange={handleChange} placeholder="e.g. Bangalore" className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm" />
+                                </div>
+                                <div>
+                                    <label htmlFor="address" className="block text-sm font-medium text-dark-bg/80 mb-1">Full Address *</label>
+                                    <input required type="text" id="address" name="address" value={formData.address} onChange={handleChange} placeholder="Enter your full address" className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm" />
+                                </div>
+                            </div>
+
                             <hr className="border-gray-100" />
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -161,6 +176,7 @@ export default function RegistrationFormModal({ isOpen, onClose }: RegistrationF
                                         <option value="">Select mode</option>
                                         <option value="Online Mode">Online Mode</option>
                                         <option value="Offline Mode">Offline Mode</option>
+                                        <option value="Home visit">Home visit</option>
                                     </select>
                                 </div>
                             </div>

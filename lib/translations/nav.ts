@@ -1,7 +1,7 @@
 export const navTranslations: Record<string, Record<string, string>> = {
     en: {
         'nav.home': 'Home', 'nav.about': 'Ancient Yoga', 'nav.explore': 'Explore Us',
-        'nav.plans': 'Plans', 'nav.retreats': 'Retreats', 'nav.collaboration': 'Collaboration', 'nav.contact': 'Contact',
+        'nav.plans': 'Plans', 'nav.retreats': 'Retreats', 'nav.collaboration': 'Collaboration', 'nav.joinTrainer': 'Join as Trainer', 'nav.contact': 'Contact',
         'hero.cta1': 'Book Free Demo', 'hero.cta2': 'Explore Programs',
         'footer.brandDesc': 'Bringing ancient Indian yoga traditions to modern life. Join us on the path to wellness.',
         'footer.quickLinks': 'Quick Links', 'footer.more': 'More', 'footer.location': 'Location',
@@ -9,7 +9,7 @@ export const navTranslations: Record<string, Record<string, string>> = {
     },
     hi: {
         'nav.home': 'होम', 'nav.about': 'प्राचीन योग', 'nav.explore': 'हमें जानें',
-        'nav.plans': 'प्लान', 'nav.retreats': 'शिविर', 'nav.collaboration': 'सहयोग', 'nav.contact': 'संपर्क',
+        'nav.plans': 'प्लान', 'nav.retreats': 'शिविर', 'nav.collaboration': 'सहयोग', 'nav.joinTrainer': 'Join as Trainer', 'nav.contact': 'संपर्क',
         'hero.cta1': 'निःशुल्क डेमो बुक करें', 'hero.cta2': 'कार्यक्रम देखें',
         'footer.brandDesc': 'प्राचीन भारतीय योग परंपराओं को आधुनिक जीवन में लाना। कल्याण के मार्ग पर हमारे साथ जुड़ें।',
         'footer.quickLinks': 'त्वरित लिंक', 'footer.more': 'और अधिक', 'footer.location': 'स्थान',
@@ -17,7 +17,7 @@ export const navTranslations: Record<string, Record<string, string>> = {
     },
     te: {
         'nav.home': 'హోమ్', 'nav.about': 'ప్రాచీన యోగా', 'nav.explore': 'అన్వేషించండి',
-        'nav.plans': 'ప్లాన్‌లు', 'nav.retreats': 'శిబిరాలు', 'nav.collaboration': 'సహకారం', 'nav.contact': 'సంప్రదించండి',
+        'nav.plans': 'ప్లాన్‌లు', 'nav.retreats': 'శిబిరాలు', 'nav.collaboration': 'సహకారం', 'nav.joinTrainer': 'Join as Trainer', 'nav.contact': 'సంప్రదించండి',
         'hero.cta1': 'ఉచిత డెమో బుక్ చేయండి', 'hero.cta2': 'కార్యక్రమాలు చూడండి',
         'footer.brandDesc': 'ప్రాచీన భారతీయ యోగ సంప్రదాయాలను ఆధునిక జీవితంలో తీసుకురావడం.',
         'footer.quickLinks': 'త్వరిత లింకులు', 'footer.more': 'మరిన్ని', 'footer.location': 'స్థానం',
@@ -25,7 +25,7 @@ export const navTranslations: Record<string, Record<string, string>> = {
     },
     ta: {
         'nav.home': 'முகப்பு', 'nav.about': 'பண்டைய யோகா', 'nav.explore': 'ஆராயுங்கள்',
-        'nav.plans': 'திட்டங்கள்', 'nav.retreats': 'முகாம்கள்', 'nav.collaboration': 'ஒத்துழைப்பு', 'nav.contact': 'தொடர்பு',
+        'nav.plans': 'திட்டங்கள்', 'nav.retreats': 'முகாம்கள்', 'nav.collaboration': 'ஒத்துழைப்பு', 'nav.joinTrainer': 'Join as Trainer', 'nav.contact': 'தொடர்பு',
         'hero.cta1': 'இலவச டெமோ புக் செய்யுங்கள்', 'hero.cta2': 'நிகழ்ச்சிகளை பாருங்கள்',
         'footer.brandDesc': 'பண்டைய இந்திய யோகா மரபுகளை நவீன வாழ்க்கையில் கொண்டு வருதல்.',
         'footer.quickLinks': 'விரைவு இணைப்புகள்', 'footer.more': 'மேலும்', 'footer.location': 'இடம்',
@@ -33,7 +33,7 @@ export const navTranslations: Record<string, Record<string, string>> = {
     },
     kn: {
         'nav.home': 'ಮುಖಪುಟ', 'nav.about': 'ಪ್ರಾಚೀನ ಯೋಗ', 'nav.explore': 'ಅನ್ವೇಷಿಸಿ',
-        'nav.plans': 'ಯೋಜನೆಗಳು', 'nav.retreats': 'ಶಿಬಿರಗಳು', 'nav.collaboration': 'ಸಹಯೋಗ', 'nav.contact': 'ಸಂಪರ್ಕ',
+        'nav.plans': 'ಯೋಜನೆಗಳು', 'nav.retreats': 'ಶಿಬಿರಗಳು', 'nav.collaboration': 'ಸಹಯೋಗ', 'nav.joinTrainer': 'Join as Trainer', 'nav.contact': 'ಸಂಪರ್ಕ',
         'hero.cta1': 'ಉಚಿತ ಡೆಮೋ ಬುಕ್ ಮಾಡಿ', 'hero.cta2': 'ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ನೋಡಿ',
         'footer.brandDesc': 'ಪ್ರಾಚೀನ ಭಾರತೀಯ ಯೋಗ ಸಂಪ್ರದಾಯಗಳನ್ನು ಆಧುನಿಕ ಜೀವನಕ್ಕೆ ತರುವುದು.',
         'footer.quickLinks': 'ತ್ವರಿತ ಲಿಂಕ್‌ಗಳು', 'footer.more': 'ಇನ್ನಷ್ಟು', 'footer.location': 'ಸ್ಥಳ',
@@ -41,7 +41,7 @@ export const navTranslations: Record<string, Record<string, string>> = {
     },
     ml: {
         'nav.home': 'ഹോം', 'nav.about': 'പുരാതന യോഗ', 'nav.explore': 'പര്യവേക്ഷണം',
-        'nav.plans': 'പ്ലാനുകൾ', 'nav.retreats': 'റിട്രീറ്റുകൾ', 'nav.collaboration': 'സഹകരണം', 'nav.contact': 'ബന്ധപ്പെടുക',
+        'nav.plans': 'പ്ലാനുകൾ', 'nav.retreats': 'റിട്രീറ്റുകൾ', 'nav.collaboration': 'സഹകരണം', 'nav.joinTrainer': 'Join as Trainer', 'nav.contact': 'ബന്ധപ്പെടുക',
         'hero.cta1': 'സൗജന്യ ഡെമോ ബുക്ക് ചെയ്യുക', 'hero.cta2': 'പ്രോഗ്രാമുകൾ കാണുക',
         'footer.brandDesc': 'പുരാതന ഇന്ത്യൻ യോഗ പാരമ്പര്യങ്ങൾ ആധുനിക ജീവിതത്തിലേക്ക് കൊണ്ടുവരിക.',
         'footer.quickLinks': 'ദ്രുത ലിങ്കുകൾ', 'footer.more': 'കൂടുതൽ', 'footer.location': 'സ്ഥലം',
@@ -49,7 +49,7 @@ export const navTranslations: Record<string, Record<string, string>> = {
     },
     bn: {
         'nav.home': 'হোম', 'nav.about': 'প্রাচীন যোগ', 'nav.explore': 'অন্বেষণ',
-        'nav.plans': 'পরিকল্পনা', 'nav.retreats': 'শিবির', 'nav.collaboration': 'সহযোগিতা', 'nav.contact': 'যোগাযোগ',
+        'nav.plans': 'পরিকল্পনা', 'nav.retreats': 'শিবির', 'nav.collaboration': 'সহযোগিতা', 'nav.joinTrainer': 'Join as Trainer', 'nav.contact': 'যোগাযোগ',
         'hero.cta1': 'বিনামূল্যে ডেমো বুক করুন', 'hero.cta2': 'কার্যক্রম দেখুন',
         'footer.brandDesc': 'প্রাচীন ভারতীয় যোগ ঐতিহ্যকে আধুনিক জীবনে আনা।',
         'footer.quickLinks': 'দ্রুত লিংক', 'footer.more': 'আরও', 'footer.location': 'অবস্থান',
@@ -57,7 +57,7 @@ export const navTranslations: Record<string, Record<string, string>> = {
     },
     mr: {
         'nav.home': 'मुख्यपृष्ठ', 'nav.about': 'प्राचीन योग', 'nav.explore': 'शोधा',
-        'nav.plans': 'योजना', 'nav.retreats': 'शिबिरे', 'nav.collaboration': 'सहकार्य', 'nav.contact': 'संपर्क',
+        'nav.plans': 'योजना', 'nav.retreats': 'शिबिरे', 'nav.collaboration': 'सहकार्य', 'nav.joinTrainer': 'Join as Trainer', 'nav.contact': 'संपर्क',
         'hero.cta1': 'मोफत डेमो बुक करा', 'hero.cta2': 'कार्यक्रम पहा',
         'footer.brandDesc': 'प्राचीन भारतीय योग परंपरा आधुनिक जीवनात आणताना.',
         'footer.quickLinks': 'जलद दुवे', 'footer.more': 'अधिक', 'footer.location': 'ठिकाण',
@@ -65,7 +65,7 @@ export const navTranslations: Record<string, Record<string, string>> = {
     },
     gu: {
         'nav.home': 'હોમ', 'nav.about': 'પ્રાચીન યોગ', 'nav.explore': 'અન્વેષણ',
-        'nav.plans': 'યોજનાઓ', 'nav.retreats': 'શિબિરો', 'nav.collaboration': 'સહકાર', 'nav.contact': 'સંપર્ક',
+        'nav.plans': 'યોજનાઓ', 'nav.retreats': 'શિબિરો', 'nav.collaboration': 'સહકાર', 'nav.joinTrainer': 'Join as Trainer', 'nav.contact': 'સંપર્ક',
         'hero.cta1': 'મફત ડેમો બુક કરો', 'hero.cta2': 'કાર્યક્રમો જુઓ',
         'footer.brandDesc': 'પ્રાચીન ભારતીય યોગ પરંપરાઓને આધુનિક જીવનમાં લાવવી.',
         'footer.quickLinks': 'ઝડપી લિંક્સ', 'footer.more': 'વધુ', 'footer.location': 'સ્થાન',
@@ -73,7 +73,7 @@ export const navTranslations: Record<string, Record<string, string>> = {
     },
     pa: {
         'nav.home': 'ਹੋਮ', 'nav.about': 'ਪ੍ਰਾਚੀਨ ਯੋਗ', 'nav.explore': 'ਖੋਜੋ',
-        'nav.plans': 'ਯੋਜਨਾਵਾਂ', 'nav.retreats': 'ਰਿਟਰੀਟ', 'nav.collaboration': 'ਸਹਿਯੋਗ', 'nav.contact': 'ਸੰਪਰਕ',
+        'nav.plans': 'ਯੋਜਨਾਵਾਂ', 'nav.retreats': 'ਰਿਟਰੀਟ', 'nav.collaboration': 'ਸਹਿਯੋਗ', 'nav.joinTrainer': 'Join as Trainer', 'nav.contact': 'ਸੰਪਰਕ',
         'hero.cta1': 'ਮੁਫ਼ਤ ਡੈਮੋ ਬੁੱਕ ਕਰੋ', 'hero.cta2': 'ਪ੍ਰੋਗਰਾਮ ਦੇਖੋ',
         'footer.brandDesc': 'ਪ੍ਰਾਚੀਨ ਭਾਰਤੀ ਯੋਗ ਪਰੰਪਰਾਵਾਂ ਨੂੰ ਆਧੁਨਿਕ ਜੀਵਨ ਵਿੱਚ ਲਿਆਉਣਾ।',
         'footer.quickLinks': 'ਤੇਜ਼ ਲਿੰਕ', 'footer.more': 'ਹੋਰ', 'footer.location': 'ਸਥਾਨ',
@@ -81,7 +81,7 @@ export const navTranslations: Record<string, Record<string, string>> = {
     },
     od: {
         'nav.home': 'ହୋମ', 'nav.about': 'ପ୍ରାଚୀନ ଯୋଗ', 'nav.explore': 'ଅନ୍ୱେଷଣ',
-        'nav.plans': 'ଯୋଜନା', 'nav.retreats': 'ଶିବିର', 'nav.collaboration': 'ସହଯୋଗ', 'nav.contact': 'ଯୋଗାଯୋଗ',
+        'nav.plans': 'ଯୋଜନା', 'nav.retreats': 'ଶିବିର', 'nav.collaboration': 'ସହଯୋଗ', 'nav.joinTrainer': 'Join as Trainer', 'nav.contact': 'ଯୋଗାଯୋଗ',
         'hero.cta1': 'ମାଗଣା ଡେମୋ ବୁକ୍ କରନ୍ତୁ', 'hero.cta2': 'କାର୍ଯ୍ୟକ୍ରମ ଦେଖନ୍ତୁ',
         'footer.brandDesc': 'ପ୍ରାચીନ ଭାରତୀୟ ଯୋଗ ପରମ୍ପରାକୁ ଆଧୁନିକ ଜୀବନରେ ଆଣିବା।',
         'footer.quickLinks': 'ଦ୍ରୁତ ଲିଙ୍କ', 'footer.more': 'ଅଧିକ', 'footer.location': 'ସ୍ଥାନ',
@@ -89,7 +89,7 @@ export const navTranslations: Record<string, Record<string, string>> = {
     },
     sa: {
         'nav.home': 'गृहम्', 'nav.about': 'प्राचीनयोगः', 'nav.explore': 'अन्वेषणम्',
-        'nav.plans': 'योजनाः', 'nav.retreats': 'शिबिराणि', 'nav.collaboration': 'सहकार्यम्', 'nav.contact': 'सम्पर्कः',
+        'nav.plans': 'योजनाः', 'nav.retreats': 'शिबिराणि', 'nav.collaboration': 'सहकार्यम्', 'nav.joinTrainer': 'Join as Trainer', 'nav.contact': 'सम्पर्कः',
         'hero.cta1': 'निःशुल्कं प्रदर्शनं पुस्तकम्', 'hero.cta2': 'कार्यक्रमान् पश्यतु',
         'footer.brandDesc': 'प्राचीनभारतीययोगपरम्परां आधुनिकजीवने आनयनम्।',
         'footer.quickLinks': 'शीघ्रसम्बन्धाः', 'footer.more': 'अधिकम्', 'footer.location': 'स्थानम्',

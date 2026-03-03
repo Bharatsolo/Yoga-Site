@@ -35,33 +35,32 @@ export default function CollabFormModal({ isOpen, onClose, collabType }: CollabF
         e.preventDefault();
 
         // Build WhatsApp message
-        let message = `🤝 *New ${collabType} Application — Sva Yoga Shala*\n\n`;
-        message += `👤 *Name:* ${formData.firstName} ${formData.lastName}\n`;
-        message += `📧 *Email:* ${formData.email}\n`;
-        message += `📞 *Phone:* ${formData.countryCode} ${formData.phone}\n`;
-        message += `📍 *Location:* ${formData.city}, ${formData.country} (${formData.zip})\n`;
+        let message = `*New ${collabType} Application — Sva Yoga Shala*\n\n`;
+        message += `• *Name:* ${formData.firstName} ${formData.lastName}\n`;
+        message += `• *Email:* ${formData.email}\n`;
+        message += `• *Phone:* ${formData.countryCode} ${formData.phone}\n`;
+        message += `• *Location:* ${formData.city}, ${formData.country} (${formData.zip})\n`;
 
         if (formData.address) {
-            message += `🏠 *Address:* ${formData.address}\n`;
+            message += `• *Address:* ${formData.address}\n`;
         }
 
         if (collabType === 'Partner') {
-            message += `🎯 *Interested In:* ${formData.customSelect}\n`;
+            message += `• *Interested In:* ${formData.customSelect}\n`;
         } else if (collabType === 'Investor') {
-            message += `💰 *Investment Range:* ${formData.customSelect}\n`;
+            message += `• *Investment Range:* ${formData.customSelect}\n`;
         } else if (collabType === 'Franchise') {
-            message += `⏳ *Experience Range:* ${formData.customSelect}\n`;
+            message += `• *Experience Range:* ${formData.customSelect}\n`;
         }
 
         if (formData.message) {
-            message += `\n📝 *Message:* ${formData.message}\n`;
+            message += `\n• *Message:* ${formData.message}\n`;
         }
 
         const encodedMessage = encodeURIComponent(message);
 
         // Opening WhatsApp with the pre-filled message
-        window.open(`mailto:svayogashala@gmail.com,info@svayogashala.com?subject=New Collaboration Request&body=${encodedMessage}`, '_blank');
-        window.open(`https://wa.me/917569645049?text=${encodedMessage}`, '_blank');
+        window.open(`https://wa.me/918639978917?text=${encodedMessage}`, '_blank');
 
         onClose();
         setFormData({

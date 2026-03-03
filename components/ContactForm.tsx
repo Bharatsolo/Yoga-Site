@@ -3,12 +3,14 @@
 import { useState } from 'react';
 
 export default function ContactForm() {
-    const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
+    const [form, setForm] = useState({ name: '', email: '', phone: '', city: '', address: '', message: '' });
 
     const handleSubmit = () => {
-        const text = `Hello! I'm ${form.name}.%0AEmail: ${form.email}%0APhone: ${form.phone}%0AMessage: ${form.message}`;
-        window.open(`mailto:svayogashala@gmail.com,info@svayogashala.com?subject=New Contact Message&body=${text}`, '_blank');
-        window.open(`https://wa.me/917569645049?text=${text}`, '_blank');
+        let text = `Hello! I'm ${form.name}.%0AEmail: ${form.email}%0APhone: ${form.phone}`;
+        if (form.city) text += `%0ACity: ${form.city}`;
+        if (form.address) text += `%0AAddress: ${form.address}`;
+        text += `%0AMessage: ${form.message}`;
+        window.open(`https://wa.me/918639978917?text=${text}`, '_blank');
     };
 
     return (
@@ -46,6 +48,28 @@ export default function ContactForm() {
                         placeholder="Enter your phone number"
                         className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-dark-bg text-sm focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
                     />
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label className="block text-sm font-medium text-dark-bg mb-1.5">City *</label>
+                        <input
+                            type="text"
+                            value={form.city}
+                            onChange={(e) => setForm({ ...form, city: e.target.value })}
+                            placeholder="e.g. Bangalore"
+                            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-dark-bg text-sm focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
+                        />
+                    </div>
+                    <div>
+                        <label className="block text-sm font-medium text-dark-bg mb-1.5">Full Address *</label>
+                        <input
+                            type="text"
+                            value={form.address}
+                            onChange={(e) => setForm({ ...form, address: e.target.value })}
+                            placeholder="Enter your full address"
+                            className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-dark-bg text-sm focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/20 transition-all"
+                        />
+                    </div>
                 </div>
                 <div>
                     <label className="block text-sm font-medium text-dark-bg mb-1.5">Message</label>

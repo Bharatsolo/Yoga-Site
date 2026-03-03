@@ -13,6 +13,8 @@ export default function BookingModal({ isOpen, onClose, retreatTitle }: BookingM
         name: '',
         email: '',
         phone: '',
+        city: '',
+        address: '',
         message: '',
         guests: 1,
         date: ''
@@ -22,25 +24,27 @@ export default function BookingModal({ isOpen, onClose, retreatTitle }: BookingM
         e.preventDefault();
 
         // Build WhatsApp message
-        let message = `🧘‍♀️ *New Booking Inquiry — Sva Yoga Shala*\n\n`;
-        message += `✨ *Interested In:* ${retreatTitle}\n`;
-        message += `👤 *Name:* ${formData.name}\n`;
-        message += `📧 *Email:* ${formData.email}\n`;
-        message += `📞 *Phone:* ${formData.phone}\n`;
-        message += `👥 *Guests:* ${formData.guests}\n`;
+        let message = `*New Booking Inquiry — Sva Yoga Shala*\n\n`;
+        message += `• *Interested In:* ${retreatTitle}\n`;
+        message += `• *Name:* ${formData.name}\n`;
+        message += `• *Email:* ${formData.email}\n`;
+        message += `• *Phone:* ${formData.phone}\n`;
+        message += `• *Guests:* ${formData.guests}\n`;
+        if (formData.city) message += `• *City:* ${formData.city}\n`;
+        if (formData.address) message += `• *Address:* ${formData.address}\n`;
 
         if (formData.date) {
-            message += `📅 *Preferred Date:* ${formData.date}\n`;
+            message += `• *Preferred Date:* ${formData.date}\n`;
         }
         if (formData.message) {
-            message += `\n📝 *Additional Notes:* ${formData.message}\n`;
+            message += `\n• *Additional Notes:* ${formData.message}\n`;
         }
 
         const encodedMessage = encodeURIComponent(message);
 
         // Opening WhatsApp with the pre-filled message
-        // Replace 916302567165 with the actual number if different
-        window.open(`https://wa.me/916302567165?text=${encodedMessage}`, '_blank');
+        // Replace 918639978917 with the actual number if different
+        window.open(`https://wa.me/918639978917?text=${encodedMessage}`, '_blank');
 
         onClose();
     };
@@ -106,6 +110,31 @@ export default function BookingModal({ isOpen, onClose, retreatTitle }: BookingM
                                 className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all"
                                 value={formData.guests}
                                 onChange={(e) => setFormData({ ...formData, guests: parseInt(e.target.value) })}
+                            />
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                        <div>
+                            <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">City *</label>
+                            <input
+                                required
+                                type="text"
+                                className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all"
+                                value={formData.city}
+                                onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                                placeholder="e.g. Bangalore"
+                            />
+                        </div>
+                        <div>
+                            <label className="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1">Full Address *</label>
+                            <input
+                                required
+                                type="text"
+                                className="w-full px-4 py-2 rounded-lg border border-gray-200 focus:border-gold focus:ring-1 focus:ring-gold outline-none transition-all"
+                                value={formData.address}
+                                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                                placeholder="Enter your full address"
                             />
                         </div>
                     </div>
