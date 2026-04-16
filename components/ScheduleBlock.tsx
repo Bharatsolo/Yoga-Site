@@ -1,7 +1,6 @@
 interface ScheduleBlockProps {
     icon: string;
     title: string;
-    price: string;
     times: string[];
     description: string;
     gradient?: string;
@@ -11,7 +10,6 @@ interface ScheduleBlockProps {
 export default function ScheduleBlock({
     icon,
     title,
-    price,
     times,
     description,
     gradient = 'from-gold-dark to-gold',

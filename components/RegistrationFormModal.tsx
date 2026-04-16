@@ -13,9 +13,9 @@ export default function RegistrationFormModal({ isOpen, onClose }: RegistrationF
         age: '',
         gender: '',
         phone: '',
-        countryCode: '+91',
         email: '',
         city: '',
+        country: '',
         address: '',
         purpose: '',
         source: '',
@@ -49,8 +49,9 @@ export default function RegistrationFormModal({ isOpen, onClose }: RegistrationF
         message += `• *Name:* ${formData.fullName}\n`;
         if (formData.age) message += `• *Age:* ${formData.age}\n`;
         message += `• *Gender:* ${formData.gender}\n`;
-        message += `• *Phone:* ${formData.countryCode} ${formData.phone}\n`;
+        message += `• *Phone:* ${formData.phone}\n`;
         if (formData.email) message += `• *Email:* ${formData.email}\n`;
+        if (formData.country) message += `• *Country:* ${formData.country}\n`;
         if (formData.city) message += `• *City:* ${formData.city}\n`;
         if (formData.address) message += `• *Address:* ${formData.address}\n`;
 
@@ -69,8 +70,8 @@ export default function RegistrationFormModal({ isOpen, onClose }: RegistrationF
 
         onClose();
         setFormData({
-            fullName: '', age: '', gender: '', phone: '', countryCode: '+91', email: '',
-            city: '', address: '',
+            fullName: '', age: '', gender: '', phone: '', email: '',
+            city: '', country: '', address: '',
             purpose: '', source: '', joinTimeframe: '', preferredTimeSlot: '', mode: '', sessionsPerMonth: ''
         });
     };
@@ -135,12 +136,7 @@ export default function RegistrationFormModal({ isOpen, onClose }: RegistrationF
                                 <div>
                                     <label htmlFor="phone" className="block text-sm font-medium text-dark-bg/80 mb-1">Phone Number *</label>
                                     <div className="relative flex items-center w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-lg focus-within:ring-2 focus-within:ring-gold/50 focus-within:border-gold/50 transition-all">
-                                        <select name="countryCode" value={formData.countryCode} onChange={handleChange} className="bg-transparent border-none outline-none text-gray-600 appearance-none text-sm pr-2 cursor-pointer w-[40px] focus:ring-0 truncate" style={{ scrollbarWidth: 'none' }}>
-                                            <option value="+91">🇮🇳</option>
-                                            <option value="+1">🇺🇸</option>
-                                            <option value="+44">🇬🇧</option>
-                                            <option value="+61">🇦🇺</option>
-                                        </select>
+
                                         <span className="text-xs text-gray-400 mr-2 pointer-events-none select-none">⌄</span>
                                         <div className="w-px h-4 bg-gray-300 mr-2"></div>
                                         <input required type="tel" id="phone" name="phone" value={formData.phone} onChange={handleChange} className="flex-1 bg-transparent border-none focus:outline-none focus:ring-0 text-dark-bg text-sm p-0 m-0 w-full" />
@@ -154,13 +150,17 @@ export default function RegistrationFormModal({ isOpen, onClose }: RegistrationF
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
+                                    <label htmlFor="country" className="block text-sm font-medium text-dark-bg/80 mb-1">Country *</label>
+                                    <input required type="text" id="country" name="country" value={formData.country} onChange={handleChange} placeholder="e.g. India" className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm" />
+                                </div>
+                                <div>
                                     <label htmlFor="city" className="block text-sm font-medium text-dark-bg/80 mb-1">City *</label>
                                     <input required type="text" id="city" name="city" value={formData.city} onChange={handleChange} placeholder="e.g. Bangalore" className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm" />
                                 </div>
-                                <div>
-                                    <label htmlFor="address" className="block text-sm font-medium text-dark-bg/80 mb-1">Full Address *</label>
-                                    <input required type="text" id="address" name="address" value={formData.address} onChange={handleChange} placeholder="Enter your full address" className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm" />
-                                </div>
+                            </div>
+                            <div>
+                                <label htmlFor="address" className="block text-sm font-medium text-dark-bg/80 mb-1">Full Address *</label>
+                                <input required type="text" id="address" name="address" value={formData.address} onChange={handleChange} placeholder="Enter your full address" className="w-full px-4 py-2 bg-gray-50/50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg text-sm" />
                             </div>
 
                             <hr className="border-gray-100" />
@@ -177,6 +177,9 @@ export default function RegistrationFormModal({ isOpen, onClose }: RegistrationF
                                         <option value="Online Mode">Online Mode</option>
                                         <option value="Offline Mode">Offline Mode</option>
                                         <option value="Home visit">Home visit</option>
+                                        <option value="Personal training">Personal training</option>
+                                        <option value="Studio">Studio</option>
+                                        <option value="Open area">Open area</option>
                                     </select>
                                 </div>
                             </div>

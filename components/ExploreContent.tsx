@@ -48,15 +48,6 @@ export default function ExploreContent() {
             </section>
 
             {/* Class Schedule */}
-            <section className="py-20 md:py-28 bg-white">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <ScheduleBlock icon="☀️" title={t('ex.morning', lang)} price={t('ex.morningPrice', lang)} times={['5:00 AM - 8:00 AM', '8:00 AM - 10:30 AM', '10:30 AM - 12:30 PM']} description={t('ex.morningD', lang)} gradient="from-amber-600 to-amber-400" onClick={() => setIsRegModalOpen(true)} />
-                        <ScheduleBlock icon="🌤️" title={t('ex.afternoon', lang)} price={t('ex.afternoonPrice', lang)} times={['3:00 PM - 4:00 PM', '4:00 PM - 5:00 PM']} description={t('ex.afternoonD', lang)} gradient="from-sky-700 to-sky-500" onClick={() => setIsRegModalOpen(true)} />
-                        <ScheduleBlock icon="🌙" title={t('ex.evening', lang)} price={t('ex.eveningPrice', lang)} times={['5:00 PM - 6:00 PM', '6:00 PM - 7:00 PM', '7:00 PM - 8:00 PM']} description={t('ex.eveningD', lang)} gradient="from-purple-800 to-purple-600" onClick={() => setIsRegModalOpen(true)} />
-                    </div>
-                </div>
-            </section>
 
             {/* Yoga for Every Age */}
             <section className="py-20 md:py-28 bg-dark-bg">

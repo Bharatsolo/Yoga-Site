@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import TrainerRegistrationForm from '@/components/TrainerRegistrationForm';
 
 export const metadata: Metadata = {
@@ -15,10 +16,12 @@ export default function JoinAsTrainerPage() {
             {/* Dark Hero Section for Navbar Visibility */}
             <div className="relative pt-32 pb-24 bg-dark-bg overflow-hidden flex flex-col justify-center border-b border-gold/20">
                 <div className="absolute inset-0">
-                    <img
+                    <Image
                         src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1920&q=80"
                         alt="Yoga Trainer"
-                        className="w-full h-full object-cover opacity-20"
+                        fill
+                        className="object-cover opacity-20"
+                        priority
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-dark-bg via-dark-bg/80 to-transparent"></div>
                 </div>

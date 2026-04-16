@@ -27,6 +27,18 @@ export default function PlansContent() {
                 </div>
             </section>
 
+            <section className="py-20 md:py-28 bg-gray-50">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <SectionHeader label={t('pl.onlineLabel', lang)} title={t('pl.onlineTitle', lang)} description={t('pl.onlineDesc', lang)} />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <PricingCard title={t('pl.1m', lang)} duration={t('pl.online', lang)} price="1,999" onClick={() => setIsRegModalOpen(true)} />
+                        <PricingCard title={t('pl.3m', lang)} duration={t('pl.online', lang)} price="4,999" onClick={() => setIsRegModalOpen(true)} />
+                        <PricingCard title={t('pl.6m', lang)} duration={t('pl.online', lang)} price="9,999" featured badge={t('pl.popular', lang)} onClick={() => setIsRegModalOpen(true)} />
+                        <PricingCard title={t('pl.1y', lang)} duration={t('pl.online', lang)} price="14,999" onClick={() => setIsRegModalOpen(true)} />
+                    </div>
+                </div>
+            </section>
+
             <section className="py-20 md:py-28 bg-dark-bg">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <SectionHeader label={t('pl.groupLabel', lang)} title={t('pl.groupTitle', lang)} description={t('pl.groupDesc', lang)} light />

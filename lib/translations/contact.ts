@@ -10,6 +10,7 @@ export const contactTranslations: Record<string, Record<string, string>> = {
         'ct.stayLabel': 'Stay Connected', 'ct.communityTitle': 'Join Our Community',
         'ct.communityDesc': 'Join our WhatsApp community to stay updated on exclusive offers, special promotions, and the latest news! 🚀🎉',
         'ct.menCommunity': 'MEN Community', 'ct.womenCommunity': 'WOMEN Community',
+        'ct.phone': 'Phone Number',
     },
     hi: {
         'contact.label': 'संपर्क करें', 'contact.title': 'हमसे संपर्क करें', 'contact.subtitle': 'हम आपसे सुनना और आपकी योग यात्रा शुरू करने में मदद करना पसंद करेंगे',
@@ -22,6 +23,7 @@ export const contactTranslations: Record<string, Record<string, string>> = {
         'ct.stayLabel': 'जुड़े रहें', 'ct.communityTitle': 'हमारे समुदाय में शामिल हों',
         'ct.communityDesc': 'विशेष ऑफर, प्रमोशन और नवीनतम समाचारों पर अपडेट रहने के लिए हमारे व्हाट्सएप समुदाय में शामिल हों! 🚀🎉',
         'ct.menCommunity': 'पुरुष समुदाय', 'ct.womenCommunity': 'महिला समुदाय',
+        'ct.phone': 'फ़ोन नंबर',
     },
     te: {
         'contact.label': 'సంప్రదించండి', 'contact.title': 'మమ్మల్ని సంప్రదించండి', 'contact.subtitle': 'మీ నుండి వినడానికి మరియు మీ యోగా ప్రయాణం ప్రారంభించడంలో సహాయం చేయడానికి ఇష్టపడతాము',
@@ -34,6 +36,7 @@ export const contactTranslations: Record<string, Record<string, string>> = {
         'ct.stayLabel': 'కనెక్ట్ అయి ఉండండి', 'ct.communityTitle': 'మా కమ్యూనిటీలో చేరండి',
         'ct.communityDesc': 'ప్రత్యేక ఆఫర్లు, ప్రమోషన్లు మరియు తాజా వార్తలపై నవీకరణల కోసం మా వాట్సాప్ కమ్యూనిటీలో చేరండి! 🚀🎉',
         'ct.menCommunity': 'పురుషుల కమ్యూనిటీ', 'ct.womenCommunity': 'మహిళల కమ్యూనిటీ',
+        'ct.phone': 'ఫోన్ నంబర్',
     },
     ta: {
         'contact.label': 'தொடர்பில் இருங்கள்', 'contact.title': 'எங்களை தொடர்பு கொள்ளுங்கள்', 'contact.subtitle': 'உங்களிடமிருந்து கேட்கவும் உங்கள் யோகா பயணத்தைத் தொடங்க உதவவும் நாங்கள் விரும்புகிறோம்',
@@ -46,6 +49,7 @@ export const contactTranslations: Record<string, Record<string, string>> = {
         'ct.stayLabel': 'இணைந்திருங்கள்', 'ct.communityTitle': 'எங்கள் சமூகத்தில் சேருங்கள்',
         'ct.communityDesc': 'பிரத்யேக சலுகைகள், விளம்பரங்கள் மற்றும் சமீபத்திய செய்திகள் குறித்த புதுப்பிப்புகளைப் பெற எங்கள் வாட்ஸ்அப் சமூகத்தில் சேருங்கள்! 🚀🎉',
         'ct.menCommunity': 'ஆண்கள் சமூகம்', 'ct.womenCommunity': 'பெண்கள் சமூகம்',
+        'ct.phone': 'தொலைபேசி எண்',
     },
     kn: {
         'contact.label': 'ಸಂಪರ್ಕದಲ್ಲಿರಿ', 'contact.title': 'ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ', 'contact.subtitle': 'ನಿಮ್ಮಿಂದ ಕೇಳಲು ಮತ್ತು ನಿಮ್ಮ ಯೋಗ ಪ್ರಯಾಣವನ್ನು ಪ್ರಾರಂಭಿಸಲು ನಾವು ನಿಮಗೆ ಸಹಾಯ ಮಾಡಲು ಇಷ್ಟಪಡುತ್ತೇವೆ',
@@ -58,6 +62,7 @@ export const contactTranslations: Record<string, Record<string, string>> = {
         'ct.stayLabel': 'ಸಂಪರ್ಕದಲ್ಲಿರಿ', 'ct.communityTitle': 'ನಮ್ಮ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ',
         'ct.communityDesc': 'ವಿಶೇಷ ಕೊಡುಗೆಗಳು, ಪ್ರಚಾರಗಳು ಮತ್ತು ಇತ್ತೀಚಿನ ಸುದ್ದಿಗಳ ಕುರಿತು ನವೀಕರಣಗಳನ್ನು ಪಡೆಯಲು ನಮ್ಮ ವಾಟ್ಸಾಪ್ ಸಮುದಾಯಕ್ಕೆ ಸೇರಿ! 🚀🎉',
         'ct.menCommunity': 'ಪುರುಷರ ಸಮುದಾಯ', 'ct.womenCommunity': 'ಮಹಿಳೆಯರ ಸಮುದಾಯ',
+        'ct.phone': 'ದೂರವಾಣಿ ಸಂಖ್ಯೆ',
     },
     ml: {
         'contact.label': 'ബന്ധപ്പെടുക', 'contact.title': 'ഞങ്ങളെ ബന്ധപ്പെടുക', 'contact.subtitle': 'നിങ്ങളിൽ നിന്ന് കേൾക്കാനും നിങ്ങളുടെ യോഗ യാത്ര ആരംഭിക്കാൻ സഹായിക്കാനും ഞങ്ങൾ ആഗ്രഹിക്കുന്നു',
@@ -70,6 +75,7 @@ export const contactTranslations: Record<string, Record<string, string>> = {
         'ct.stayLabel': 'ബന്ധം നിലനിർത്തുക', 'ct.communityTitle': 'ഞങ്ങളുടെ കമ്മ്യൂണിറ്റിയിൽ ചേരുക',
         'ct.communityDesc': 'എക്‌സ്‌ക്ലൂസീവ് ഓഫറുകൾ, പ്രൊമോഷനുകൾ, ഏറ്റവും പുതിയ വാർത്തകൾ എന്നിവയെക്കുറിച്ചുള്ള അപ്‌ഡേറ്റുകൾ ലഭിക്കാൻ ഞങ്ങളുടെ വാട്ട്‌സ്ആപ്പ് കമ്മ്യൂണിറ്റിയിൽ ചേരുക! 🚀🎉',
         'ct.menCommunity': 'പുരുഷന്മാരുടെ കമ്മ്യൂണിറ്റി', 'ct.womenCommunity': 'സ്ത്രീകളുടെ കമ്മ്യൂണിറ്റി',
+        'ct.phone': 'ഫോൺ നമ്പർ',
     },
     bn: {
         'contact.label': 'যোগাযোগ রাখুন', 'contact.title': 'আমাদের সাথে যোগাযোগ করুন', 'contact.subtitle': 'আমরা আপনার কাছ থেকে শুনতে এবং আপনার যোগ যাত্রা শুরু করতে সাহায্য করতে চাই',
@@ -82,6 +88,7 @@ export const contactTranslations: Record<string, Record<string, string>> = {
         'ct.stayLabel': 'সংযুক্ত থাকুন', 'ct.communityTitle': 'আমাদের সম্প্রদায়ে যোগ দিন',
         'ct.communityDesc': 'এক্সক্লুসিভ অফার, প্রচার এবং সর্বশেষ খবরের আপডেট পেতে আমাদের হোয়াটসঅ্যাপ সম্প্রদায়ে যোগ দিন! 🚀🎉',
         'ct.menCommunity': 'পুরুষদের সম্প্রদায়', 'ct.womenCommunity': 'মহিলাদের সম্প্রদায়',
+        'ct.phone': 'ফোন নম্বর',
     },
     mr: {
         'contact.label': 'संपर्कात रहा', 'contact.title': 'आमच्याशी संपर्क साधा', 'contact.subtitle': 'आम्हाला तुमच्याकडून ऐकायला आणि तुमचा योग प्रवास सुरू करण्यास मदत करायला आवडेल',
@@ -106,6 +113,7 @@ export const contactTranslations: Record<string, Record<string, string>> = {
         'ct.stayLabel': 'જોડાયેલા રહો', 'ct.communityTitle': 'અમારા સમુદાયમાં જોડાઓ',
         'ct.communityDesc': 'વિશિષ્ટ ઑફર્સ, પ્રચાર અને નવીનતમ સમાચાર પર અપડેટ રહેવા માટે અમારા વોટ્સએપ સમુદાયમાં જોડાઓ! 🚀🎉',
         'ct.menCommunity': 'પુરુષ સમુદાય', 'ct.womenCommunity': 'મહિલા સમુદાય',
+        'ct.phone': 'ફોન નંબર',
     },
     pa: {
         'contact.label': 'ਸੰਪਰਕ ਵਿੱਚ ਰਹੋ', 'contact.title': 'ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ', 'contact.subtitle': 'ਅਸੀਂ ਤੁਹਾਡੇ ਤੋਂ ਸੁਣਨਾ ਅਤੇ ਤੁਹਾਡੀ ਯੋਗ ਯਾਤਰਾ ਸ਼ੁਰੂ ਕਰਨ ਵਿੱਚ ਮਦਦ ਕਰਨਾ ਪਸੰਦ ਕਰਾਂਗੇ',
@@ -118,6 +126,7 @@ export const contactTranslations: Record<string, Record<string, string>> = {
         'ct.stayLabel': 'ਜੁੜੇ ਰਹੋ', 'ct.communityTitle': 'ਸਾਡੇ ਭਾਈਚਾਰੇ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ',
         'ct.communityDesc': 'ਵਿਸ਼ੇਸ਼ ਪੇਸ਼ਕਸ਼ਾਂ, ਪ੍ਰੋਮੋਸ਼ਨਾਂ ਅਤੇ ਤਾਜ਼ਾ ਖ਼ਬਰਾਂ ਬਾਰੇ ਅੱਪਡੇਟ ਰਹਿਣ ਲਈ ਸਾਡੇ ਵਟਸਐਪ ਭਾਈਚਾਰੇ ਵਿੱਚ ਸ਼ਾਮਲ ਹੋਵੋ! 🚀🎉',
         'ct.menCommunity': 'ਪੁਰਸ਼ ਭਾਈਚਾਰਾ', 'ct.womenCommunity': 'ਮਹਿਲਾ ਭਾਈਚਾਰਾ',
+        'ct.phone': 'ਫ਼ੋਨ ਨੰਬਰ',
     },
     od: {
         'contact.label': 'ଯୋଗାଯୋଗରେ ରୁହନ୍ତୁ', 'contact.title': 'ଆମ ସହିତ ଯୋଗାଯୋଗ କରନ୍ତୁ', 'contact.subtitle': 'ଆମେ ଆପଣଙ୍କଠାରୁ ଶୁଣିବାକୁ ଏବଂ ଆପଣଙ୍କ ଯୋଗ ଯାତ୍ରା ଆରମ୍ଭ କରିବାରେ ସାହାଯ୍ୟ କରିବାକୁ ପସନ୍ଦ କରିବୁ',
@@ -130,6 +139,7 @@ export const contactTranslations: Record<string, Record<string, string>> = {
         'ct.stayLabel': 'ସଂଯୁକ୍ତ ରୁହନ୍ତୁ', 'ct.communityTitle': 'ଆମ ସମ୍ପ୍ରଦାୟରେ ଯୋଗ ଦିଅନ୍ତୁ',
         'ct.communityDesc': 'ସ୍ୱତନ୍ତ୍ର ଅଫର୍, ପ୍ରୋମୋସନ୍ ଏବଂ ସର୍ବଶେଷ ଖବର ବିଷୟରେ ଅପଡେଟ୍ ରହିବାକୁ ଆମର ହ୍ୱାଟସ୍ଆପ୍ ସମ୍ପ୍ରଦାୟରେ ଯୋଗ ଦିଅନ୍ତୁ! 🚀🎉',
         'ct.menCommunity': 'ପୁରୁଷ ସମ୍ପ୍ରଦାୟ', 'ct.womenCommunity': 'ମହିଳା ସମ୍ପ୍ରଦାୟ',
+        'ct.phone': 'ଫୋନ୍ ନମ୍ବର',
     },
     sa: {
         'contact.label': 'संपर्के तिष्ठतु', 'contact.title': 'अस्मान् संपर्कं कुरुत', 'contact.subtitle': 'वयं भवदभ्यः श्रोतुं तथा च भवतां योग-यात्रां आरब्धुं साहाय्यं कर्तुं इच्छामः',
@@ -142,5 +152,6 @@ export const contactTranslations: Record<string, Record<string, string>> = {
         'ct.stayLabel': 'संयुक्ताः तिष्ठन्तु', 'ct.communityTitle': 'अस्माकं समुदाये सम्मिलिताः भवन्तु',
         'ct.communityDesc': 'विशिष्ट-प्रस्तावानां, प्रचारणां तथा च नवीनतम-वार्तानां विषये अद्यतनं स्थातुं अस्माकं व्हाट्सएप-समुदाये सम्मिलिताः भवन्तु! 🚀🎉',
         'ct.menCommunity': 'पुरुष-समुदायः', 'ct.womenCommunity': 'महिला-समुदायः',
+        'ct.phone': 'दूरभाष-संख्या',
     },
 };

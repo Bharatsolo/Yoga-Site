@@ -34,6 +34,13 @@ export default function ContactContent() {
                                     <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-2xl flex-shrink-0">📧</div>
                                     <div><div className="text-sm font-semibold text-dark-bg mb-1">{t('ct.joinUs', lang)}</div><div className="text-text-muted text-sm leading-relaxed">{t('ct.joinDesc', lang)}</div></div>
                                 </div>
+                                <div className="flex gap-4 items-start">
+                                    <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center text-2xl flex-shrink-0">📞</div>
+                                    <div>
+                                        <div className="text-sm font-semibold text-dark-bg mb-1">{t('ct.phone', lang)}</div>
+                                        <a href="tel:8639978917" className="text-text-muted text-sm hover:text-gold transition-colors">+91 8639978917</a>
+                                    </div>
+                                </div>
                             </div>
                             <button onClick={() => setIsRegModalOpen(true)} className="inline-block px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-dark-bg font-semibold rounded-full hover:shadow-lg hover:shadow-gold/30 hover:scale-105 transition-all duration-300 mb-3">{t('ct.bookCta', lang)}</button>
                             <p className="text-text-muted text-sm">{t('ct.freeNote', lang)}</p>
