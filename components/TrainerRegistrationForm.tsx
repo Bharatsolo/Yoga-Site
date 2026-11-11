@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import { Country, City } from 'country-state-city';
+import { useState } from 'react';
+
 
 const WHATSAPP_LINKS: Record<string, string> = {
     Male: 'https://chat.whatsapp.com/HB53vu0TRPoGlCXzilwMIS?mode=gi_t',
@@ -39,26 +39,11 @@ export default function TrainerRegistrationForm() {
     const [errorMessage, setErrorMessage] = useState('');
     const [submittedGender, setSubmittedGender] = useState('');
 
-    // Dynamic country/city states
-    const countries = useMemo(() => Country.getAllCountries(), []);
-    const [cities, setCities] = useState<ReturnType<typeof City.getCitiesOfCountry>>([]);
+
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
-        
-        if (name === 'country') {
-            const country = countries.find(c => c.name === value);
-            if (country) {
-                const cityList = City.getCitiesOfCountry(country.isoCode) || [];
-                setCities(cityList);
-                setFormData(prev => ({ ...prev, country: value, city: '' }));
-            } else {
-                setCities([]);
-                setFormData(prev => ({ ...prev, country: '', city: '' }));
-            }
-        } else {
-            setFormData(prev => ({ ...prev, [name]: value }));
-        }
+        setFormData(prev => ({ ...prev, [name]: value }));
     };
 
     const toggleMode = (mode: string) => {
@@ -231,32 +216,29 @@ export default function TrainerRegistrationForm() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label htmlFor="country" className="block text-sm font-medium text-dark-bg/80 mb-2">Country *</label>
-                            <select
+                            <input
                                 required
+                                type="text"
                                 id="country"
                                 name="country"
                                 value={formData.country}
                                 onChange={handleChange}
-                                className="w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg appearance-none"
-                            >
-                                <option value="">Select Country</option>
-                                {countries.map(c => (
-                                    <option key={c.isoCode} value={c.name}>{c.name}</option>
-                                ))}
-                            </select>
+                                className="w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg"
+                                placeholder="e.g. India"
+                            />
                         </div>
                         <div>
                             <label htmlFor="city" className="block text-sm font-medium text-dark-bg/80 mb-2">City *</label>
-                            <select
+                            <input
                                 required
+                                type="text"
                                 id="city"
                                 name="city"
                                 value={formData.city}
                                 onChange={handleChange}
-                                disabled={!formData.country}
-                                className="w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg appearance-none disabled:opacity-50 disabled:cursor-not-allowed"
-                            >
-                            </select>
+                                className="w-full px-4 py-3 bg-gray-50/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-gold/50 focus:border-gold/50 transition-all text-dark-bg"
+                                placeholder="e.g. Mumbai"
+                            />
                         </div>
                     </div>
                     <div>
